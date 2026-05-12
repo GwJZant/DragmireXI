@@ -1,32 +1,35 @@
 ---
-const myName = "DragmireXI";
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout title="DragmireXI | Home">
+    <h1 class="hero-title">DragmireXI</h1>
+    <p>Zelda Lore | Projects | Gaming Reviews</p>
+    
+    <hr />
+    
+    <div class="socials">
+        <p>Check out my latest videos:</p>
+        <a href="https://www.youtube.com/@DragmireXI" class="yt-button">YouTube Channel</a>
+    </div>
+</BaseLayout>
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>DragmireXI</title>
-        <style>
-            body {
-                background: #13151a; 
-				color: white; 
-				display: flex; 
-				justify-content: center; 
-				align-items: center; 
-				height: 100vh; 
-				margin: 0;
-				font-family: sans-serif;
-            }
-            div { text-align: center; border: 1px solid #333; padding: 2rem; border-radius: 8px; }
-			h1 { color: #ff3e00; }
-        </style>
-    </head>
-    <body>
-        <div>
-            <h1>{myName}</h1>
-            <p>Coming Soon</p>
-            <small>Built with Astro + Cloudflare.</small>
-        </div>
-    </body>
-</html>
+<style>
+    .hero-title {
+        font-size: 5rem;
+        margin-top: 10vh;
+        color: #ff3e00;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-shadow: 3px 3px 0px rgba(255,255,255,0.1);
+    }
+    .yt-button {
+        display: inline-block;
+        background: #ff3e00;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>
