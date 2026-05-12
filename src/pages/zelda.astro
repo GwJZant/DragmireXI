@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Paste each folder’s link from Drive (Share → “Anyone with the link” if you want it public).
+const textureDriveFolders: { label: string; description: string; folderUrl: string }[] = [
+	{
+		label: 'The Legend of Zelda: Twilight Princess HD',
+		description: 'Textures dumped using Cemu. I played the entire game so this is likely complete.',
+		folderUrl: 'https://drive.google.com/drive/folders/1ushaDI5gM_aZW6WCl0BoP0ogM_qljKFm?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Twilight Princess',
+		description: 'Textures dumped using Dolphin. I played the entire game so this is likely complete.',
+		folderUrl: 'https://drive.google.com/drive/folders/1xhj7Onm3VD_mZR9wJ6B_fxrdqMQXbk6Y?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Wind Waker HD',
+		description: 'Textures dumped using Cemu.',
+		folderUrl: 'https://drive.google.com/drive/folders/1YvTfnQBcAVtQpqkZMOSddj8XmdIubELN?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Wind Waker',
+		description: 'Textures dumped using Dolphin.',
+		folderUrl: 'https://drive.google.com/drive/folders/1IBYRbElOZsFR7Sj1aFzAPHmakOMEDLMZ?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Majora\'s Mask 3D',
+		description: 'Textures dumped using Citra. I loaded a complete save file and explored so this one may be more incomplete than the others.',
+		folderUrl: 'https://drive.google.com/drive/folders/1LlysuytprPXOswaukKb3MaAcp3r_PfR8?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Majora\'s Mask',
+		description: 'I forget which emulator I used for this one. I loaded a complete save file and explored so this one may be more incomplete than the others.',
+		folderUrl: 'https://drive.google.com/drive/folders/1ztpgGXfa6tK9RbAOdzE1Ya89d7NZiVnY?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: A Link Between Worlds',
+		description: 'Textured dumped using Citra.',
+		folderUrl: 'https://drive.google.com/drive/folders/1gYdc6FCntzRD3UcFoxCPi6uHJKo7q4qx?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Four Swords Adventures',
+		description: 'Textured dumped using Dolphin.',
+		folderUrl: 'https://drive.google.com/drive/folders/1rHx_F7Bu0XYXFD7xN6Qjn6uPXRsvJ_7H?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Breath of the Wild',
+		description: 'Textured dumped using Citra.',
+		folderUrl: 'https://drive.google.com/drive/folders/1o3h9X_f2v4LOkG3l8e3Ln_exfVPW-MOp?usp=drive_link',
+	},
+	{
+		label: 'The Legend of Zelda: Skyward Sword',
+		description: 'Textures dumped using Dolphin.',
+		folderUrl: 'https://drive.google.com/drive/folders/1U27S0nKa-YDPTJEQlRPtJcTOfFmpjACI?usp=drive_link',
+	},
+	{
+		label: 'Hyrule Warriors',
+		description: 'Textured dumped using Cemu.',
+		folderUrl: 'https://drive.google.com/drive/folders/1zWDsLr_w3WNePCcCs5xJkPVVxPp8DnxH?usp=drive_link',
+	},
+	{
+		label: 'Hyrule Warriors: Age of Calamity Cutscenes',
+		description: 'These are ripped from Cemu. They have no audio.',
+		folderUrl: 'https://drive.google.com/drive/folders/1e6OfFShaHSGwArzBG-0TiA4BMW3lTevo?usp=drive_link',
+	},
+	{
+		label: 'General Video References',
+		description: 'Sometimes I need to record a short video to reference a texture. This folder contains those videos.',
+		folderUrl: 'https://drive.google.com/drive/folders/1ZX7uL3B4q_8wJXj2LRtGqsteqmz2-jm0?usp=drive_link',
+	},
+];
+---
+
+<BaseLayout title="DragmireXI | Zelda">
+	<h1 class="hero-title">The Legend of Zelda</h1>
+	<p class="tagline">Theories, references, and project materials</p>
+
+	<hr />
+
+	<section class="page-section" aria-labelledby="theories-heading">
+		<h2 class="hero-title section-heading" id="theories-heading">Theories</h2>
+		<p class="section-lede empty-note">
+			Theory articles and breakdowns will live here. Nothing published yet.
+		</p>
+	</section>
+
+	<section class="page-section" aria-labelledby="resources-heading">
+		<h2 class="hero-title section-heading" id="resources-heading">Resources</h2>
+		<p class="section-lede">
+			Google Drive folders with texture image references from selected games. Links open in a new tab.
+			None of these folders I can vouch are complete and all have textures dumped from my own personal play sessions.
+			The vast majority of textures should be present, but some may be missing.
+			<br />
+			<br />
+			Feel free to use these resources for your own projects. I own none of the assets so I do not need credit.
+		</p>
+		<ul class="resource-list">
+			{
+				textureDriveFolders.map(({ label, description, folderUrl }) => (
+					<li class="resource-item">
+						<div class="resource-head">
+							<strong>{label}</strong>
+							<span class="resource-desc">{description}</span>
+						</div>
+						{folderUrl ? (
+							<a
+								class="resource-link"
+								href={folderUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Open folder in Google Drive
+							</a>
+						) : (
+							<span class="resource-pending">Drive folder link coming soon.</span>
+						)}
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</BaseLayout>
+
+<style>
+	.hero-title {
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px 5px var(--malice-purple));
+	}
+
+	.tagline {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.page-section {
+		text-align: left;
+		max-width: min(48rem, 100%);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2rem;
+	}
+
+	.page-section:first-of-type {
+		margin-top: 0;
+	}
+
+	.section-heading {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 1.25rem;
+	}
+
+	.section-lede {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		color: #c8c8c8;
+		font-size: 0.95rem;
+	}
+
+	.empty-note {
+		font-style: italic;
+		margin-bottom: 0;
+	}
+
+	.resource-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+		align-items: stretch;
+	}
+
+	@media (max-width: 640px) {
+		.resource-list {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.resource-item {
+		padding: 1rem 1.25rem;
+		border: 1px solid rgba(211, 47, 47, 0.35);
+		border-radius: 6px;
+		background: rgba(0, 0, 0, 0.25);
+		min-height: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resource-head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.resource-head strong {
+		overflow-wrap: break-word;
+	}
+
+	.resource-desc {
+		font-size: 0.9rem;
+		color: #b0b0b0;
+	}
+
+	.resource-link {
+		display: inline-block;
+		margin-top: auto;
+		padding-top: 0.75rem;
+		color: var(--power-gold);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		font-weight: 600;
+	}
+
+	.resource-link:hover {
+		color: var(--ganon-red);
+	}
+
+	.resource-pending {
+		margin-top: auto;
+		padding-top: 0.75rem;
+		font-size: 0.9rem;
+		color: #909090;
+	}
+</style>
