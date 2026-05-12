@@ -17,29 +17,29 @@ const latestVideoId = "UHEpP6feeUE";
             I will post about things I care about. Video gaming topics in my sphere of
             interests include The Legend of Zelda, Final Fantasy, the Remedyverse, and RuneScape.
         </p>
-        <br />
-        <p>
-            I have some things I would like to do:
-            <div class="goals-container">
-                <ul class="goals-list">
-                    <li>
-                        Zelda theory review videos
-                    </li>
-                    <li>
-                        Zelda timeline & general theory review blog posts
-                    </li>
-                    <li>
-                        Video game collection tracker webapp
-                    </li>
-                    <li>
-                        FFXI Luashitacast tutorials
-                    </li>
-                    <li>
-                        Video game reviews
-                    </li>
-                </ul>  
-            </div>   
-        </p>
+        <p>I have some things I would like to do:</p>
+        <div class="goals-container">
+            <ul class="goals-list">
+                <li>
+                    Zelda theory review videos
+                </li>
+                <li>
+                    Zelda timeline &amp; general theory review blog posts
+                </li>
+                <li>
+                    Video game collection tracker webapp
+                </li>
+                <li>
+                    FFXI Luashitacast tutorials
+                </li>
+                <li>
+                    Video game reviews
+                </li>
+                <li>
+                    Forum?
+                </li>
+            </ul>  
+        </div>   
         <p>
             Please stay tuned for more.
         </p>
@@ -58,28 +58,23 @@ const latestVideoId = "UHEpP6feeUE";
 <style>
     .hero-title {
         background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
-        -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(2px 2px 5px var(--malice-purple));
     }
     .video-section {
-        margin: 3rem auto; /* The 'auto' on the left/right is the key! */
-        max-width: 720px;  /* Or whatever width you want */
-    
-        /* Optional: ensures the internal video also respects the center */
-        flex-direction: column;
-        align-items: center;
+        margin: 3rem auto;
+        max-width: 720px;
     }
     .goals-container {
         display: flex;
-        justify-content: center; /* Centers the list block horizontally */
+        justify-content: center;
         margin-top: 1.5rem;
     }
 
-    /* The list itself stays left-aligned */
     .goals-list {
-        text-align: left; /* Text stays flush against the numbers */
-        display: inline-block; /* Makes the box only as wide as the longest line */
+        text-align: left;
+        display: inline-block;
         line-height: 1.8;
     }
 

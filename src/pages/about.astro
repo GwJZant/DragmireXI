@@ -1,6 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Title Here">
-    <h1>Page Coming Soon</h1>
+
+<BaseLayout title="DragmireXI | About">
+    <h1 class="hero-title">About</h1>
+
+    <hr />
+
+    <div class="about-body">
+        <p>
+            I am <strong>DragmireXI</strong>. This site is a personal project where I
+            plan to write and build around games and media I care about.
+        </p>
+        <p>
+            Most of my energy goes toward <strong>The Legend of Zelda</strong> (lore and theories) and
+            <strong>Final Fantasy XI</strong>. The <strong>Remedyverse</strong> and <strong>RuneScape</strong> 
+            are also in my sphere of interests.
+        </p>
+        <p>
+            Currently, my YouTube channel is focused on <strong>Final Fantasy XI</strong> content. 
+            I play on the Horizon XI private server and post videos on content I do solo or as a group with my linkshell.
+        </p>
+        <p>
+            Soon, I will be posting videos on <strong>The Legend of Zelda</strong> and potentially other games I play.
+            If you want to follow along, subscribe to my YouTube channel; I also use GitHub for simple projects.
+        </p>
+    </div>
 </BaseLayout>
+
+<style>
+    .hero-title {
+        background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(2px 2px 5px var(--malice-purple));
+    }
+
+    .tagline {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .about-body {
+        text-align: left;
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-body p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .about-body p:last-child {
+        margin-bottom: 0;
+    }
+
+    .section-heading {
+        margin-top: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    .socials {
+        margin-top: 2rem;
+    }
+</style>

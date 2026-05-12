@@ -1,0 +1,7 @@
+:root {
+	/* Core palette — used across layout and pages via var() */
+	--bg-dark: #0f0f0f;
+	--ganon-red: #d32f2f;
+	--power-gold: #ffb300;
+	--malice-purple: #4a148c;
+}
