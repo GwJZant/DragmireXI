@@ -13,7 +13,35 @@ const latestVideoId = "UHEpP6feeUE";
 
     <div class="site-description">
         <p>
-            Welcome to the domain of DragmireXI. This site is just a personal project of mine so I will likely have a bunch of unrelated topics or content here. Stay tuned for more.
+            Welcome to the domain of DragmireXI. This site is just a personal project of mine so 
+            I will post about things I care about. Video gaming topics in my sphere of
+            interests include The Legend of Zelda, Final Fantasy, the Remedyverse, and RuneScape.
+        </p>
+        <br />
+        <p>
+            I have some things I would like to do:
+            <div class="goals-container">
+                <ul class="goals-list">
+                    <li>
+                        Zelda theory review videos
+                    </li>
+                    <li>
+                        Zelda timeline & general theory review blog posts
+                    </li>
+                    <li>
+                        Video game collection tracker webapp
+                    </li>
+                    <li>
+                        FFXI Luashitacast tutorials
+                    </li>
+                    <li>
+                        Video game reviews
+                    </li>
+                </ul>  
+            </div>   
+        </p>
+        <p>
+            Please stay tuned for more.
         </p>
     </div>
     
@@ -41,5 +69,22 @@ const latestVideoId = "UHEpP6feeUE";
         /* Optional: ensures the internal video also respects the center */
         flex-direction: column;
         align-items: center;
+    }
+    .goals-container {
+        display: flex;
+        justify-content: center; /* Centers the list block horizontally */
+        margin-top: 1.5rem;
+    }
+
+    /* The list itself stays left-aligned */
+    .goals-list {
+        text-align: left; /* Text stays flush against the numbers */
+        display: inline-block; /* Makes the box only as wide as the longest line */
+        line-height: 1.8;
+    }
+
+    .goals-list li {
+        margin-bottom: 0.5rem;
+        padding-left: 0.5rem;
     }
 </style>
