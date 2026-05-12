@@ -1,35 +1,45 @@
 ---
 // src/pages/index.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { YouTube } from 'astro-embed';
+
+const latestVideoId = "UHEpP6feeUE";
 ---
 <BaseLayout title="DragmireXI | Home">
     <h1 class="hero-title">DragmireXI</h1>
     <p>Zelda Lore | Projects | Gaming Reviews</p>
     
     <hr />
+
+    <div class="site-description">
+        <p>
+            Welcome to the domain of DragmireXI. This site is just a personal project of mine so I will likely have a bunch of unrelated topics or content here. Stay tuned for more.
+        </p>
+    </div>
     
+    <div class="video-section">
+        <h2 class="hero-title">Featured Video</h2>
+        <YouTube id={latestVideoId} />
+    </div>
+
     <div class="socials">
-        <p>Check out my latest videos:</p>
-        <a href="https://www.youtube.com/@DragmireXI" class="yt-button">YouTube Channel</a>
+        <a href="https://www.youtube.com/@DragmireXI" class="yt-button">Visit Channel</a>
     </div>
 </BaseLayout>
 
 <style>
     .hero-title {
-        font-size: 5rem;
-        margin-top: 10vh;
-        color: #ff3e00;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        text-shadow: 3px 3px 0px rgba(255,255,255,0.1);
+        background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(2px 2px 5px var(--malice-purple));
     }
-    .yt-button {
-        display: inline-block;
-        background: #ff3e00;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
+    .video-section {
+        margin: 3rem auto; /* The 'auto' on the left/right is the key! */
+        max-width: 720px;  /* Or whatever width you want */
+    
+        /* Optional: ensures the internal video also respects the center */
+        flex-direction: column;
+        align-items: center;
     }
 </style>
