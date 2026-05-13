@@ -2,20 +2,41 @@
 // src/layouts/BaseLayout.astro
 import '../styles/global.css';
 
-const { title } = Astro.props;
+interface Props {
+	title: string;
+	wide?: boolean;
+}
+
+const { title, wide = false } = Astro.props;
 ---
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <script is:inline>
+        try {
+            if (localStorage.getItem('dragmirexi-theme') === 'link') {
+                document.documentElement.setAttribute('data-theme', 'link');
+            }
+        } catch (_) {}
+    </script>
     <meta name="viewport" content="width=device-width" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <title>{title}</title>
     <style is:global>
-        html, body {
-            height: 100%;
+        html,
+        body {
             margin: 0;
+        }
+
+        /*
+         * Sticky footer: html has a definite height so body’s min-height:100% fills the viewport
+         * when content is short; main flex-grow absorbs the gap. Body may still grow taller than
+         * the viewport when content is long (no footer overlap).
+         */
+        html {
+            height: 100%;
         }
         h1, h2, nav a {
             font-family: 'Cinzel', serif; /* Sharp, epic look for the titles */
@@ -24,16 +45,18 @@ const { title } = Astro.props;
         h1, h2 {
             letter-spacing: 0.15em;
         }
-        body { 
+        body {
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             background: var(--bg-dark); 
-            color: #e0e0e0; /* Off-white for better readability against black */
+            color: var(--body-text);
             font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
         main {
-            flex: 1;
+            flex: 1 0 auto;
         }
         .yt-button {
             display: inline-block;
@@ -52,13 +75,15 @@ const { title } = Astro.props;
         }        
         nav { 
             display: flex; 
+            flex-shrink: 0;
             justify-content: flex-end; 
             padding: 1.5rem 2rem; 
             gap: 2rem;
-            background: rgba(0,0,0,0.3);
+            background: var(--nav-bg);
+            transition: background-color 0.25s ease;
         }
         nav a { 
-            color: white; 
+            color: var(--nav-link); 
             text-decoration: none; 
             font-weight: bold; 
             transition: color 0.3s, text-shadow 0.3s;
@@ -71,11 +96,36 @@ const { title } = Astro.props;
             flex-shrink: 0;
             margin-top: 4rem;
             padding: 3rem 0;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            background: var(--footer-bg);
             border-top: 1px solid var(--ganon-red);
-            color: #888;
+            color: var(--footer-text);
             font-size: 0.9rem;
             text-align: center;
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .footer-theme-toggle {
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            cursor: pointer;
+            padding: 0.2rem 0.45rem;
+            border-radius: 4px;
+        }
+
+        .footer-theme-toggle:hover {
+            color: var(--power-gold);
+            text-decoration: underline;
+        }
+
+        .footer-theme-toggle:focus {
+            outline: none;
+        }
+
+        .footer-theme-toggle:focus-visible {
+            outline: 2px solid var(--power-gold);
+            outline-offset: 2px;
         }
 
         .footer-links {
@@ -91,7 +141,7 @@ const { title } = Astro.props;
         }
 
         .footer-links a {
-            color: #888; /* Or whatever your 'dim' color is */
+            color: var(--footer-text);
         }
 
         .footer-links a svg {
@@ -113,6 +163,13 @@ const { title } = Astro.props;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 2rem; text-align: center; }
+
+        main.container.container--wide {
+            max-width: min(1200px, 100%);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
@@ -120,14 +177,25 @@ const { title } = Astro.props;
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/zelda">Zelda</a>
+        <a href="/timeline">Timeline</a>
         <a href="/blog">Blog</a>
     </nav>
-    <main class="container">
+    <main class:list={['container', { 'container--wide': wide }]}>
         <slot /> 
     </main>
     <footer>
         <div class="footer-content">
-            <p>&copy; {new Date().getFullYear()} DragmireXI</p>
+            <p>
+                <button
+                    type="button"
+                    class="footer-theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Toggle color theme"
+                    title="Toggle color theme (classic / Link-inspired)"
+                >
+                    &copy; {new Date().getFullYear()} DragmireXI
+                </button>
+            </p>
             <div class="footer-links">
                 <a href="https://www.youtube.com/@DragmireXI" aria-label="YouTube">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -142,5 +210,24 @@ const { title } = Astro.props;
             </div>
         </div>
     </footer>
+    <script is:inline>
+        (function () {
+            var KEY = 'dragmirexi-theme';
+            var root = document.documentElement;
+            var btn = document.getElementById('theme-toggle');
+            function apply(theme) {
+                if (theme === 'link') root.setAttribute('data-theme', 'link');
+                else root.removeAttribute('data-theme');
+            }
+            btn &&
+                btn.addEventListener('click', function () {
+                    var next = root.getAttribute('data-theme') === 'link' ? 'ganon' : 'link';
+                    apply(next);
+                    try {
+                        localStorage.setItem(KEY, next);
+                    } catch (_) {}
+                });
+        })();
+    </script>
 </body>
 </html>

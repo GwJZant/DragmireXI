@@ -1,7 +1,38 @@
+/* Default: darker “classic” palette (existing look). Link theme: html[data-theme="link"] */
 :root {
-	/* Core palette — used across layout and pages via var() */
 	--bg-dark: #0f0f0f;
 	--ganon-red: #d32f2f;
 	--power-gold: #ffb300;
 	--malice-purple: #4a148c;
+
+	--body-text: #e0e0e0;
+	--text-muted: #c8c8c8;
+	--text-muted-2: #b0b0b0;
+	--text-muted-3: #9a9a9a;
+	--text-muted-4: #a8a8a8;
+	--footer-text: #888888;
+	--nav-link: #ffffff;
+	--nav-bg: rgba(0, 0, 0, 0.3);
+	--footer-bg: rgba(0, 0, 0, 0.5);
+	--border-subtle: rgba(211, 47, 47, 0.35);
+	--card-bg: rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="link"] {
+	--bg-dark: #e2efe6;
+	--ganon-red: #2e7d32;
+	--power-gold: #f9a825;
+	--malice-purple: #1565c0;
+
+	--body-text: #26372b;
+	--text-muted: #455a4e;
+	--text-muted-2: #546e56;
+	--text-muted-3: #607466;
+	--text-muted-4: #5a6f60;
+	--footer-text: #4a5c52;
+	--nav-link: #1b4024;
+	--nav-bg: rgba(255, 255, 255, 0.58);
+	--footer-bg: rgba(196, 220, 204, 0.55);
+	--border-subtle: rgba(46, 125, 50, 0.4);
+	--card-bg: rgba(255, 255, 255, 0.55);
 }

@@ -1,6 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// External reads: Reddit, forums, etc. (not your writing — title links out.)
+type ExternalTheoryLink = {
+	title: string;
+	description: string;
+	url: string;
+	/** Original writer or credited theorist when known */
+	author?: string;
+	/** Optional, e.g. "Reddit — r/truezelda" or "Zelda Universe forums" */
+	source?: string;
+};
+
+const externalTheoryLinks: ExternalTheoryLink[] = [
+	{
+		title: 'Sealing Divergence Timeline',
+		description:
+			'Timeline theory about BotW/TotK/AoI. Original author is Japanese; this Reddit post is a retelling of their work.',
+		url: 'https://www.reddit.com/r/truezelda/comments/1qoma43/all_sealing_divergence_timeline/',
+		author: 'ohyoso_tabun',
+		source: 'Reddit - r/truezelda',
+	},
+];
+
+// External sites: assets, dev lore, wikis, etc. (same card shape as Theories.)
+type ExternalResourceLink = {
+	title: string;
+	description: string;
+	url: string;
+	author?: string;
+	source?: string;
+};
+
+const externalResourceLinks: ExternalResourceLink[] = [
+{
+		title: 'The Cutting Room Floor — Zelda series',
+		description:
+			'Category hub on a community wiki for unused and changed content, prototypes, regional differences, and other development-focused notes across many Zelda games.',
+		url: 'https://tcrf.net/Category:Legend_of_Zelda_series',
+		source: 'The Cutting Room Floor (tcrf.net)',
+	},
+	{
+		title: 'noclip.website',
+		description:
+			'noclip.website is an open source application for viewing 3D models from a selection of video games. Many Zelda games are present and allow you to view things you normally can\'t see.',
+		url: 'https://noclip.website/',
+	},
+];
+
 // Paste each folder’s link from Drive (Share → “Anyone with the link” if you want it public).
 const textureDriveFolders: { label: string; description: string; folderUrl: string }[] = [
 	{
@@ -77,48 +124,116 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 
 	<hr />
 
-	<section class="page-section" aria-labelledby="theories-heading">
-		<h2 class="hero-title section-heading" id="theories-heading">Theories</h2>
-		<p class="section-lede empty-note">
-			Theory articles and breakdowns will live here. Nothing published yet.
-		</p>
-	</section>
-
-	<section class="page-section" aria-labelledby="resources-heading">
-		<h2 class="hero-title section-heading" id="resources-heading">Resources</h2>
-		<p class="section-lede">
-			Google Drive folders with texture image references from selected games. Links open in a new tab.
-			None of these folders I can vouch are complete and all have textures dumped from my own personal play sessions.
-			The vast majority of textures should be present, but some may be missing.
-			<br />
-			<br />
-			Feel free to use these resources for your own projects. I own none of the assets so I do not need credit.
-		</p>
-		<ul class="resource-list">
+	<details class="page-section collapsible" open aria-labelledby="theories-heading">
+		<summary class="collapsible-summary">
+			<span class="collapsible-chevron" aria-hidden="true">▶</span>
+			<h2 class="hero-title section-heading" id="theories-heading">Theories</h2>
+		</summary>
+		<div class="collapsible-panel">
+			<p class="section-lede">
+				Links to Zelda theory posts and threads I have found elsewhere (Reddit, forums, and similar). Each
+				entry opens in a new tab; I do not own or write the linked material.
+			</p>
 			{
-				textureDriveFolders.map(({ label, description, folderUrl }) => (
-					<li class="resource-item">
-						<div class="resource-head">
-							<strong>{label}</strong>
-							<span class="resource-desc">{description}</span>
-						</div>
-						{folderUrl ? (
-							<a
-								class="resource-link"
-								href={folderUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Open folder in Google Drive
-							</a>
-						) : (
-							<span class="resource-pending">Drive folder link coming soon.</span>
-						)}
-					</li>
-				))
+				externalTheoryLinks.length === 0 ? (
+					<p class="empty-note">Nothing listed yet.</p>
+				) : (
+					<ul class="theory-list">
+						{externalTheoryLinks.map(({ title, description, url, author, source }) => (
+							<li class="theory-card">
+								<a class="theory-title-link" href={url} target="_blank" rel="noopener noreferrer">
+									{title}
+									<span class="theory-external-mark" aria-hidden="true">
+										{' '}
+										↗
+									</span>
+								</a>
+								{author ? <p class="theory-author">By {author}</p> : null}
+								{source ? <p class="theory-source">{source}</p> : null}
+								<p class="theory-desc">{description}</p>
+							</li>
+						))}
+					</ul>
+				)
 			}
-		</ul>
-	</section>
+		</div>
+	</details>
+
+	<details class="page-section collapsible" open aria-labelledby="textures-heading">
+		<summary class="collapsible-summary">
+			<span class="collapsible-chevron" aria-hidden="true">▶</span>
+			<h2 class="hero-title section-heading" id="textures-heading">Textures</h2>
+		</summary>
+		<div class="collapsible-panel">
+			<p class="section-lede">
+				Google Drive folders with texture image references from selected games. Links open in a new tab.
+				None of these folders I can vouch are complete and all have textures dumped from my own personal play sessions.
+				The vast majority of textures should be present, but some may be missing.
+				<br />
+				<br />
+				Feel free to use these texture dumps for your own projects. I own none of the assets so I do not need credit.
+			</p>
+			<ul class="resource-list">
+				{
+					textureDriveFolders.map(({ label, description, folderUrl }) => (
+						<li class="resource-item">
+							<div class="resource-head">
+								<strong>{label}</strong>
+								<span class="resource-desc">{description}</span>
+							</div>
+							{folderUrl ? (
+								<a
+									class="resource-link"
+									href={folderUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Open folder in Google Drive
+								</a>
+							) : (
+								<span class="resource-pending">Drive folder link coming soon.</span>
+							)}
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</details>
+
+	<details class="page-section collapsible" open aria-labelledby="resources-heading">
+		<summary class="collapsible-summary">
+			<span class="collapsible-chevron" aria-hidden="true">▶</span>
+			<h2 class="hero-title section-heading" id="resources-heading">Resources</h2>
+		</summary>
+		<div class="collapsible-panel">
+			<p class="section-lede">
+				Sites with useful assets, reference material, or lore I want to remember. Each entry opens in a
+				new tab; I do not run these sites.
+			</p>
+			{
+				externalResourceLinks.length === 0 ? (
+					<p class="empty-note">Nothing listed yet.</p>
+				) : (
+					<ul class="theory-list">
+						{externalResourceLinks.map(({ title, description, url, author, source }) => (
+							<li class="theory-card">
+								<a class="theory-title-link" href={url} target="_blank" rel="noopener noreferrer">
+									{title}
+									<span class="theory-external-mark" aria-hidden="true">
+										{' '}
+										↗
+									</span>
+								</a>
+								{author ? <p class="theory-author">By {author}</p> : null}
+								{source ? <p class="theory-source">{source}</p> : null}
+								<p class="theory-desc">{description}</p>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+	</details>
 </BaseLayout>
 
 <style>
@@ -146,6 +261,59 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 		margin-top: 0;
 	}
 
+	.collapsible-summary {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.collapsible-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.collapsible-summary::marker {
+		content: '';
+	}
+
+	.collapsible-summary:focus {
+		outline: none;
+	}
+
+	.collapsible-summary:focus-visible {
+		outline: 2px solid var(--power-gold);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	.collapsible-summary .section-heading {
+		margin-bottom: 0;
+		flex: 1;
+		text-align: left;
+	}
+
+	.collapsible-chevron {
+		display: inline-block;
+		flex-shrink: 0;
+		font-size: 0.55rem;
+		line-height: 1;
+		color: var(--power-gold);
+		transform: rotate(0deg);
+		transition: transform 0.2s ease;
+		margin-top: 0.1em;
+	}
+
+	details[open] > .collapsible-summary .collapsible-chevron {
+		transform: rotate(90deg);
+	}
+
+	.collapsible-panel {
+		margin-top: 0.75rem;
+	}
+
 	.section-heading {
 		margin-top: 0;
 		margin-bottom: 0.75rem;
@@ -155,13 +323,74 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 	.section-lede {
 		margin-top: 0;
 		margin-bottom: 1rem;
-		color: #c8c8c8;
+		color: var(--text-muted);
 		font-size: 0.95rem;
 	}
 
 	.empty-note {
 		font-style: italic;
+		margin-top: 0;
 		margin-bottom: 0;
+		color: var(--text-muted-4);
+	}
+
+	.theory-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.theory-card {
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--border-subtle);
+		border-radius: 6px;
+		background: var(--card-bg);
+		box-sizing: border-box;
+	}
+
+	.theory-title-link {
+		display: block;
+		font-weight: 700;
+		font-size: 1.05rem;
+		color: var(--power-gold);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.theory-title-link:hover {
+		color: var(--ganon-red);
+	}
+
+	.theory-external-mark {
+		font-weight: 400;
+		text-decoration: none;
+		opacity: 0.85;
+	}
+
+	.theory-author {
+		margin: 0.35rem 0 0;
+		font-size: 0.9rem;
+		color: var(--text-muted-2);
+	}
+
+	.theory-source {
+		margin: 0.2rem 0 0;
+		font-size: 0.85rem;
+		color: var(--text-muted-3);
+	}
+
+	.theory-title-link + .theory-source {
+		margin-top: 0.35rem;
+	}
+
+	.theory-desc {
+		margin: 0.5rem 0 0;
+		font-size: 0.95rem;
+		color: var(--text-muted);
+		line-height: 1.55;
 	}
 
 	.resource-list {
@@ -182,9 +411,9 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 
 	.resource-item {
 		padding: 1rem 1.25rem;
-		border: 1px solid rgba(211, 47, 47, 0.35);
+		border: 1px solid var(--border-subtle);
 		border-radius: 6px;
-		background: rgba(0, 0, 0, 0.25);
+		background: var(--card-bg);
 		min-height: 100%;
 		box-sizing: border-box;
 		display: flex;
@@ -203,7 +432,7 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 
 	.resource-desc {
 		font-size: 0.9rem;
-		color: #b0b0b0;
+		color: var(--text-muted-2);
 	}
 
 	.resource-link {
@@ -224,6 +453,6 @@ const textureDriveFolders: { label: string; description: string; folderUrl: stri
 		margin-top: auto;
 		padding-top: 0.75rem;
 		font-size: 0.9rem;
-		color: #909090;
+		color: var(--text-muted-3);
 	}
 </style>

@@ -1,0 +1,571 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="DragmireXI | Timeline" wide={true}>
+	<div class="timeline-page">
+		<h1 class="hero-title">Zelda timeline lab</h1>
+		<p class="page-lede">
+			Drag games from the list onto the canvas to place them. You can drag from the golden nodes to connect them.
+			You can also select a node(s) and hit Backspace or Delete to remove them.
+			Export PNG when you are done to save to an image file.
+		</p>
+		<div id="timeline-root" class="timeline-root"></div>
+	</div>
+</BaseLayout>
+
+<script>
+	import { mountTimelineEditor } from '../scripts/timeline-editor';
+
+	const root = document.getElementById('timeline-root');
+	if (root) mountTimelineEditor(root);
+</script>
+
+<style is:global>
+	.timeline-page {
+		text-align: left;
+		max-width: 100%;
+		flex: 0 0 auto;
+		display: flex;
+		flex-direction: column;
+		min-height: min-content;
+	}
+
+	.timeline-page .hero-title {
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px 5px var(--malice-purple));
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.timeline-page .page-lede {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.55;
+		max-width: 52rem;
+		margin: 0 auto 0.75rem;
+		text-align: left;
+	}
+
+	.timeline-root {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		min-height: min-content;
+	}
+
+	.tm-root {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		flex: 1;
+		min-height: min-content;
+	}
+
+	.tm-toolbar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 0.75rem;
+		padding: 0.25rem 0;
+		flex-shrink: 0;
+	}
+
+	.tm-btn {
+		font: inherit;
+		cursor: pointer;
+		padding: 0.45rem 0.85rem;
+		border-radius: 6px;
+		border: 1px solid var(--border-subtle);
+		background: var(--card-bg);
+		color: var(--body-text);
+		font-weight: 600;
+		font-size: 0.85rem;
+	}
+
+	.tm-btn:hover {
+		border-color: var(--power-gold);
+		color: var(--power-gold);
+	}
+
+	.tm-btn-primary {
+		background: var(--power-gold);
+		color: #111;
+		border-color: transparent;
+	}
+
+	.tm-btn-primary:hover:not(:disabled) {
+		background: var(--ganon-red);
+		color: #fff;
+	}
+
+	.tm-btn:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	.tm-status {
+		font-size: 0.82rem;
+		color: var(--text-muted-2);
+		flex: 1 1 12rem;
+		min-width: 0;
+	}
+
+	.tm-body {
+		display: grid;
+		grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+		gap: 0.75rem;
+		align-items: start;
+		flex: 1;
+		min-height: min-content;
+		container-type: inline-size;
+		container-name: tm-body;
+	}
+
+	@media (max-width: 720px) {
+		.tm-body {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.tm-palette {
+		border: 1px solid var(--border-subtle);
+		border-radius: 8px;
+		background: var(--card-bg);
+		padding: 0.75rem;
+		max-height: min(100%, calc(100vh - 12rem));
+		overflow-y: auto;
+		transition:
+			box-shadow 0.15s ease,
+			border-color 0.15s ease;
+	}
+
+	.tm-palette.tm-palette-drop-target {
+		border-color: var(--ganon-red);
+		box-shadow: 0 0 0 2px var(--power-gold);
+	}
+
+	.tm-palette-title {
+		font-family: Cinzel, serif;
+		font-size: 0.95rem;
+		margin: 0 0 0.5rem;
+		color: var(--body-text);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.tm-palette-item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		text-align: left;
+		margin-bottom: 0.35rem;
+		padding: 0.4rem 0.5rem;
+		border: 1px solid transparent;
+		border-radius: 6px;
+		background: transparent;
+		color: var(--body-text);
+		cursor: grab;
+		font: inherit;
+		user-select: none;
+	}
+
+	.tm-palette-item:hover {
+		background: rgba(255, 193, 7, 0.12);
+		border-color: var(--power-gold);
+	}
+
+	.tm-palette-item:active {
+		cursor: grabbing;
+	}
+
+	.tm-palette-item.tm-palette-item--on-canvas {
+		box-shadow: inset 3px 0 0 var(--power-gold);
+		background: rgba(255, 193, 7, 0.08);
+	}
+
+	html[data-theme='link'] .tm-palette-item.tm-palette-item--on-canvas {
+		background: rgba(255, 193, 7, 0.12);
+	}
+
+	.tm-palette-item.tm-palette-item--on-canvas:hover {
+		background: rgba(255, 193, 7, 0.16);
+		border-color: var(--power-gold);
+	}
+
+	.tm-palette-short {
+		font-weight: 700;
+		font-size: 0.8rem;
+		color: var(--power-gold);
+	}
+
+	.tm-palette-full {
+		font-size: 0.72rem;
+		color: var(--text-muted-2);
+		line-height: 1.25;
+	}
+
+	.tm-palette-section-title {
+		font-family: Cinzel, serif;
+		font-size: 0.72rem;
+		margin: 0.65rem 0 0.35rem;
+		padding-top: 0.5rem;
+		border-top: 1px solid var(--border-subtle);
+		color: var(--text-muted);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
+	.tm-modal-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 10000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+		background: rgba(0, 0, 0, 0.55);
+		box-sizing: border-box;
+	}
+
+	.tm-modal {
+		width: min(100%, 22rem);
+		padding: 1rem 1.1rem;
+		border-radius: 10px;
+		border: 1px solid var(--border-subtle);
+		/* Opaque panel: --card-bg is translucent site chrome and would show the page through the dialog. */
+		background: var(--bg-dark);
+		color: var(--body-text);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+	}
+
+	.tm-modal-title {
+		font-family: Cinzel, serif;
+		font-size: 1rem;
+		margin: 0 0 0.75rem;
+		color: var(--body-text);
+	}
+
+	.tm-modal-field {
+		margin-bottom: 0.75rem;
+	}
+
+	.tm-modal-field-label {
+		display: block;
+		font-size: 0.78rem;
+		font-weight: 600;
+		margin-bottom: 0.3rem;
+		color: var(--text-muted);
+	}
+
+	.tm-modal-input {
+		width: 100%;
+		box-sizing: border-box;
+		font: inherit;
+		font-size: 0.88rem;
+		padding: 0.45rem 0.5rem;
+		border-radius: 6px;
+		border: 1px solid var(--border-subtle);
+		background: var(--bg-dark);
+		color: var(--body-text);
+	}
+
+	html[data-theme='link'] .tm-modal-input {
+		background: #fff;
+	}
+
+	.tm-modal-textarea {
+		display: block;
+		min-height: 4.5rem;
+		resize: vertical;
+		line-height: 1.35;
+	}
+
+	html[data-theme='link'] .tm-modal-textarea {
+		background: #fff;
+	}
+
+	.tm-modal-actions {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.5rem;
+		margin-top: 0.25rem;
+	}
+
+	.tm-workspace-wrap {
+		border: 1px solid var(--border-subtle);
+		border-radius: 8px;
+		overflow: hidden;
+		background: var(--bg-dark);
+		flex: 1;
+		min-width: 0;
+		width: 100%;
+		/* Square viewport: height tracks column width so the canvas area isn’t vertically scrunched. */
+		aspect-ratio: 1 / 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tm-workspace {
+		position: relative;
+		flex: 1;
+		min-height: 0;
+		overflow: auto;
+		background: color-mix(in srgb, var(--bg-dark) 92%, #1a1a1a);
+		outline: none;
+		overscroll-behavior: contain;
+	}
+
+	html[data-theme='link'] .tm-workspace {
+		background: color-mix(in srgb, var(--bg-dark) 88%, #ffffff);
+	}
+
+	.tm-workspace.tm-canvas-drop-ready {
+		cursor: copy;
+	}
+
+	.tm-workspace.tm-drag-over {
+		box-shadow: inset 0 0 0 2px var(--power-gold);
+	}
+
+	.tm-workspace.tm-mmb-panning {
+		cursor: grabbing;
+		user-select: none;
+	}
+
+	.tm-scaler {
+		position: relative;
+		display: block;
+	}
+
+	.tm-world {
+		position: relative;
+		width: 2800px;
+		height: 2800px;
+		transform-origin: 0 0;
+		--tm-grid: 12px;
+		--tm-grid-line: rgba(255, 255, 255, 0.055);
+		background-image:
+			linear-gradient(to right, var(--tm-grid-line) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--tm-grid-line) 1px, transparent 1px);
+		background-size: var(--tm-grid) var(--tm-grid);
+		background-position: 0 0;
+	}
+
+	html[data-theme='link'] .tm-world {
+		--tm-grid-line: rgba(0, 0, 0, 0.07);
+	}
+
+	.tm-svg {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.tm-paths {
+		pointer-events: auto;
+	}
+
+	.tm-edge {
+		pointer-events: none;
+	}
+
+	.tm-edge-hit {
+		pointer-events: stroke;
+		cursor: pointer;
+	}
+
+	.tm-edge-selected {
+		stroke: var(--ganon-red);
+		stroke-width: 3;
+	}
+
+	.tm-rubber {
+		pointer-events: none;
+	}
+
+	.tm-nodes {
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.tm-marquee {
+		display: none;
+		position: absolute;
+		z-index: 6;
+		pointer-events: none;
+		border: 1px dashed var(--power-gold);
+		background: rgba(255, 193, 7, 0.12);
+		box-sizing: border-box;
+	}
+
+	.tm-node {
+		pointer-events: auto;
+		position: absolute;
+		width: 168px;
+		height: 72px;
+		box-sizing: border-box;
+		border-radius: 8px;
+		overflow: visible;
+		cursor: grab;
+		user-select: none;
+	}
+
+	.tm-node:active {
+		cursor: grabbing;
+	}
+
+	/*
+	 * No outer box-shadow on the card: blur spreads past the geometry edge and paints
+	 * over the SVG (nodes sit above the canvas), so arrows looked like they started from the glow.
+	 * Depth is inset-only + a hairline border so connectors meet the real 168×72 box.
+	 */
+	.tm-node-card {
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid color-mix(in srgb, var(--border-subtle) 70%, transparent);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+	}
+
+	html[data-theme='link'] .tm-node-card {
+		border-color: color-mix(in srgb, var(--border-subtle) 55%, #888);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.35),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+	}
+
+	.tm-node-selected .tm-node-card {
+		border-color: var(--power-gold);
+		box-shadow:
+			inset 0 0 0 2px var(--ganon-red),
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+	}
+
+	html[data-theme='link'] .tm-node-selected .tm-node-card {
+		box-shadow:
+			inset 0 0 0 2px var(--ganon-red),
+			inset 0 1px 0 rgba(255, 255, 255, 0.35),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+	}
+
+	.tm-node-head {
+		padding: 0.35rem 0.5rem;
+		font-weight: 700;
+		font-size: 0.78rem;
+		color: #fff;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+		font-family: Inter, sans-serif;
+		border-radius: 8px 8px 0 0;
+	}
+
+	.tm-node-body {
+		flex: 1;
+		min-height: 0;
+		padding: 0.45rem 0.5rem;
+		font-size: 0.72rem;
+		line-height: 1.3;
+		background: color-mix(in srgb, var(--card-bg) 85%, #000);
+		color: var(--body-text);
+		border-radius: 0 0 8px 8px;
+	}
+
+	html[data-theme='link'] .tm-node-body {
+		background: rgba(255, 255, 255, 0.75);
+	}
+
+	/* Custom events: modal Label → colored head; Description → body below. */
+	.tm-node-custom .tm-node-head {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.tm-node-custom-compact .tm-node-body {
+		display: none;
+	}
+
+	.tm-node-custom-compact .tm-node-head {
+		flex: 1;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+	}
+
+	.tm-node-ports {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		z-index: 4;
+	}
+
+	.tm-port {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background: var(--power-gold);
+		border: 2px solid var(--ganon-red);
+		box-sizing: border-box;
+		cursor: crosshair;
+		z-index: 5;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.14s ease;
+	}
+
+	.tm-node:hover .tm-port,
+	.tm-node:focus-within .tm-port,
+	.tm-root.tm-wiring .tm-port {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.tm-port-n {
+		top: -8px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.tm-port-s {
+		bottom: -8px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.tm-port-e {
+		right: -8px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.tm-port-w {
+		left: -8px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.tm-port:hover {
+		filter: brightness(1.12);
+	}
+
+	/* Wide timeline main: size to content so the square canvas drives page height (see BaseLayout main flex). */
+	main.container.container--wide:has(.timeline-page) {
+		flex: 0 1 auto;
+		min-height: min-content;
+	}
+</style>
