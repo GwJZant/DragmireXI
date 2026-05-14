@@ -1,6 +1,7 @@
 ---
 // src/layouts/BaseLayout.astro
 import '../styles/global.css';
+import packageJson from '../../package.json';
 
 interface Props {
 	title: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const { title, wide = false } = Astro.props;
+const appVersion = packageJson.version;
 ---
 <html lang="en">
 <head>
@@ -267,6 +269,13 @@ const { title, wide = false } = Astro.props;
             transform: scale(1.1);
         }
 
+        .footer-version {
+            margin-top: 1rem;
+            font-size: 0.82rem;
+            color: var(--footer-text);
+            opacity: 0.92;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -337,6 +346,7 @@ const { title, wide = false } = Astro.props;
                     </svg>
                 </a>
             </div>
+            <p class="footer-version">{appVersion}</p>
         </div>
     </footer>
     <script is:inline>
