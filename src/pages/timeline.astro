@@ -10,6 +10,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			You can also select a node(s) and hit Backspace or Delete to remove them.
 			Export PNG when you are done to save to an image file.
 		</p>
+		<div
+			id="timeline-mobile-warning"
+			class="timeline-mobile-warning"
+			hidden
+			role="region"
+			aria-label="Mobile use notice"
+		>
+			<p class="timeline-mobile-warning__text">
+				This page is not optimized for mobile use. Sorry!
+			</p>
+			<button type="button" class="timeline-mobile-warning__dismiss" id="timeline-mobile-warning-dismiss">
+				Dismiss
+			</button>
+		</div>
 		<div id="timeline-root" class="timeline-root"></div>
 	</div>
 </BaseLayout>
@@ -17,18 +31,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <script>
 	import { mountTimelineEditor } from '../scripts/timeline-editor';
 
+	const WARN_KEY = 'dragmirexi-timeline-mobile-warning-dismissed';
+	const warn = document.getElementById('timeline-mobile-warning');
+	const dismissBtn = document.getElementById('timeline-mobile-warning-dismiss');
+	if (warn && dismissBtn) {
+		try {
+			if (!localStorage.getItem(WARN_KEY)) warn.removeAttribute('hidden');
+		} catch {
+			warn.removeAttribute('hidden');
+		}
+		dismissBtn.addEventListener('click', () => {
+			try {
+				localStorage.setItem(WARN_KEY, '1');
+			} catch {
+				/* ignore */
+			}
+			warn.setAttribute('hidden', '');
+		});
+	}
+
 	const root = document.getElementById('timeline-root');
 	if (root) mountTimelineEditor(root);
 </script>
 
 <style is:global>
 	.timeline-page {
+		--tm-palette-inline-pad: 0.75rem;
 		text-align: left;
 		max-width: 100%;
 		flex: 0 0 auto;
 		display: flex;
 		flex-direction: column;
 		min-height: min-content;
+		min-width: 0;
+		overflow-x: hidden;
 	}
 
 	.timeline-page .hero-title {
@@ -49,6 +85,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		text-align: left;
 	}
 
+	.timeline-mobile-warning {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.65rem 1rem;
+		max-width: 52rem;
+		margin: 0 auto 0.75rem;
+		padding: 0.65rem 1rem;
+		border-radius: 8px;
+		border: 1px solid var(--power-gold);
+		background: var(--card-bg);
+		color: var(--body-text);
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+	}
+
+	.timeline-mobile-warning[hidden] {
+		display: none;
+	}
+
+	.timeline-mobile-warning__text {
+		margin: 0;
+		flex: 1 1 12rem;
+		font-size: 0.9rem;
+		line-height: 1.45;
+		font-weight: 600;
+	}
+
+	.timeline-mobile-warning__dismiss {
+		font: inherit;
+		cursor: pointer;
+		padding: 0.4rem 0.85rem;
+		border-radius: 6px;
+		border: 1px solid var(--border-subtle);
+		background: var(--card-bg);
+		color: var(--body-text);
+		font-weight: 600;
+		font-size: 0.82rem;
+		flex-shrink: 0;
+	}
+
+	.timeline-mobile-warning__dismiss:hover {
+		border-color: var(--power-gold);
+		color: var(--power-gold);
+	}
+
+	.timeline-mobile-warning__dismiss:focus {
+		outline: none;
+	}
+
+	.timeline-mobile-warning__dismiss:focus-visible {
+		outline: 2px solid var(--power-gold);
+		outline-offset: 2px;
+	}
+
 	.timeline-root {
 		flex: 1;
 		display: flex;
@@ -59,18 +150,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	.tm-root {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		align-items: stretch;
 		flex: 1;
 		min-height: min-content;
+		min-width: 0;
+		width: 100%;
+	}
+
+	.tm-editor {
+		width: 100%;
+		box-sizing: border-box;
+		min-width: 0;
 	}
 
 	.tm-toolbar {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: flex-start;
 		gap: 0.5rem 0.75rem;
 		padding: 0.25rem 0;
 		flex-shrink: 0;
+		box-sizing: border-box;
+		min-width: 0;
+		grid-area: tlbar;
 	}
 
 	.tm-btn {
@@ -113,29 +216,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		min-width: 0;
 	}
 
+	/* Grid: toolbar row, then palette | canvas; canvas column fills remaining width. */
 	.tm-body {
 		display: grid;
-		grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
-		gap: 0.75rem;
+		width: 100%;
+		/* Same inset as .tm-palette padding-inline — keeps the canvas from sitting flush against the window edge. */
+		padding-inline-end: var(--tm-palette-inline-pad);
+		grid-template-columns: max-content minmax(0, 1fr);
+		grid-template-areas:
+			'tlbar tlbar'
+			'palette canvas';
+		column-gap: 0.75rem;
+		row-gap: 0.5rem;
 		align-items: start;
-		flex: 1;
-		min-height: min-content;
-		container-type: inline-size;
-		container-name: tm-body;
+		box-sizing: border-box;
+		min-width: 0;
+		max-width: 100%;
+		overflow-x: hidden;
 	}
 
 	@media (max-width: 720px) {
 		.tm-body {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas:
+				'tlbar'
+				'palette'
+				'canvas';
+		}
+
+		.tm-palette {
+			width: 100%;
+			max-width: none;
+		}
+
+		.tm-workspace-wrap {
+			width: 100%;
+			max-width: none;
 		}
 	}
 
 	.tm-palette {
+		grid-area: palette;
+		width: max-content;
+		max-width: 100%;
+		box-sizing: border-box;
 		border: 1px solid var(--border-subtle);
 		border-radius: 8px;
 		background: var(--card-bg);
-		padding: 0.75rem;
+		padding-block: 0.75rem;
+		padding-inline: var(--tm-palette-inline-pad);
 		max-height: min(100%, calc(100vh - 12rem));
+		overflow-x: hidden;
 		overflow-y: auto;
 		transition:
 			box-shadow 0.15s ease,
@@ -151,9 +282,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		font-family: Cinzel, serif;
 		font-size: 0.95rem;
 		margin: 0 0 0.5rem;
+		padding-inline: 0.15rem;
 		color: var(--body-text);
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
+		text-align: center;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	.tm-palette-item {
@@ -161,6 +296,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		flex-direction: column;
 		align-items: flex-start;
 		width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
 		text-align: left;
 		margin-bottom: 0.35rem;
 		padding: 0.4rem 0.5rem;
@@ -200,12 +337,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		font-weight: 700;
 		font-size: 0.8rem;
 		color: var(--power-gold);
+		max-width: 100%;
+		overflow-wrap: break-word;
 	}
 
 	.tm-palette-full {
 		font-size: 0.72rem;
 		color: var(--text-muted-2);
 		line-height: 1.25;
+		max-width: 100%;
+		overflow-wrap: break-word;
+		word-break: normal;
 	}
 
 	.tm-palette-section-title {
@@ -297,17 +439,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	.tm-workspace-wrap {
+		grid-area: canvas;
+		position: relative;
+		width: 100%;
 		border: 1px solid var(--border-subtle);
 		border-radius: 8px;
 		overflow: hidden;
 		background: var(--bg-dark);
-		flex: 1;
 		min-width: 0;
-		width: 100%;
-		/* Square viewport: height tracks column width so the canvas area isn’t vertically scrunched. */
-		aspect-ratio: 1 / 1;
+		min-height: 0;
+		max-width: 100%;
 		display: flex;
 		flex-direction: column;
+		/* Height synced from the games list in JS; column width from grid. */
 	}
 
 	.tm-workspace {
@@ -344,8 +488,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 	.tm-world {
 		position: relative;
-		width: 2800px;
-		height: 2800px;
+		width: 4000px;
+		height: 4000px;
 		transform-origin: 0 0;
 		--tm-grid: 12px;
 		--tm-grid-line: rgba(255, 255, 255, 0.055);
@@ -563,9 +707,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		filter: brightness(1.12);
 	}
 
-	/* Wide timeline main: size to content so the square canvas drives page height (see BaseLayout main flex). */
+	/* Use full layout width (override BaseLayout 1200px cap). */
 	main.container.container--wide:has(.timeline-page) {
 		flex: 0 1 auto;
 		min-height: min-content;
+		min-width: 0;
+		max-width: none;
+		width: 100%;
+		overflow-x: hidden;
 	}
 </style>

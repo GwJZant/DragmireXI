@@ -19,7 +19,7 @@ function shortFromLabel(label: string): string {
 
 const NODE_W = 168;
 const NODE_H = 72;
-const WORLD_W = 2800;
+const WORLD_W = 4000;
 /** World height matches width so the canvas is at least square (enough vertical room). */
 const WORLD_H = WORLD_W;
 /** Same margin (world px) on all sides around the union of placed node boxes in PNG export. */
@@ -199,8 +199,9 @@ export function mountTimelineEditor(host: HTMLElement): void {
 	const DT_PRESET = 'application/x-dragmirexi-preset';
 
 	const root = el('div', 'tm-root');
+	const editor = el('div', 'tm-editor');
 	const toolbar = el('div', 'tm-toolbar');
-	const btnClear = el('button', 'tm-btn', 'Clear canvas');
+	const btnClear = el('button', 'tm-btn', 'Clear Canvas');
 	btnClear.type = 'button';
 	const btnCustom = el('button', 'tm-btn', 'Custom Event');
 	btnCustom.type = 'button';
@@ -287,6 +288,7 @@ export function mountTimelineEditor(host: HTMLElement): void {
 		}
 		appendPaletteRow(preset);
 		syncPaletteOnCanvasState();
+		syncWorkspaceWrapHeightToPalette();
 	}
 
 	function openCustomEventModal(): void {
@@ -412,13 +414,29 @@ export function mountTimelineEditor(host: HTMLElement): void {
 	world.append(svg, nodesLayer, marqueeEl);
 	workspace.append(scaler);
 	wrap.append(workspace);
-	body.append(palette, wrap);
-	root.append(toolbar, body);
+	body.append(toolbar, palette, wrap);
+	editor.append(body);
+	root.append(editor);
 	host.append(root);
 
 	for (const g of TIMELINE_GAME_PRESETS) {
 		appendPaletteRow(g);
 	}
+
+	function syncWorkspaceWrapHeightToPalette(): void {
+		const h = Math.round(palette.getBoundingClientRect().height);
+		if (h < 1) return;
+		wrap.style.height = `${h}px`;
+	}
+
+	if (typeof ResizeObserver !== 'undefined') {
+		const layoutRo = new ResizeObserver(() => {
+			syncWorkspaceWrapHeightToPalette();
+		});
+		layoutRo.observe(palette);
+		layoutRo.observe(body);
+	}
+	requestAnimationFrame(() => syncWorkspaceWrapHeightToPalette());
 
 	function syncPaletteOnCanvasState(): void {
 		const placedIds = new Set(nodes.map((n) => n.presetId));
