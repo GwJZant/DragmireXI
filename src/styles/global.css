@@ -1,3 +1,5 @@
+@import './theory-cards.css';
+
 /* Default: darker “classic” palette (existing look). Link theme: html[data-theme="link"] */
 :root {
 	--bg-dark: #0f0f0f;

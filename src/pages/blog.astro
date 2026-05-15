@@ -1,6 +1,66 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPostsNewestFirst, formatPostDate } from '../lib/blogPosts';
+
+const posts = getPostsNewestFirst();
 ---
-<BaseLayout title="Title Here">
-    <h1>Page Coming Soon</h1>
+
+<BaseLayout title="DragmireXI | Blog">
+	<div class="blog-page">
+		<h1 class="hero-title">Theory Blog</h1>
+		<p class="tagline">Original Zelda theories written by DragmireXI</p>
+
+		<hr />
+
+		<section class="page-section" aria-label="Blog posts">
+			{posts.length === 0 ? (
+				<p class="empty-note">No posts yet — check back soon.</p>
+			) : (
+				<ul class="theory-list">
+					{posts.map((post) => (
+						<li class="theory-card">
+							<a class="theory-title-link" href={`/blog/${post.slug}`}>
+								{post.title}
+							</a>
+							<p class="theory-source">
+								<time datetime={post.date}>{formatPostDate(post.date)}</time>
+							</p>
+							<p class="theory-desc">{post.subtitle}</p>
+						</li>
+					))}
+				</ul>
+			)}
+		</section>
+	</div>
 </BaseLayout>
+
+<style is:global>
+	.blog-page .hero-title {
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px 5px var(--malice-purple));
+	}
+
+	.blog-page .tagline {
+		margin-top: 0;
+		margin-bottom: 0;
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.blog-page .page-section {
+		text-align: left;
+		max-width: min(48rem, 100%);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2rem;
+	}
+
+	.blog-page .empty-note {
+		font-style: italic;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: var(--text-muted-4);
+	}
+</style>

@@ -169,6 +169,17 @@ function getExportBoundsForNodes(placed: PlacedNode[]): { left: number; top: num
 	};
 }
 
+/** Download PNG without navigating the current page (data-URL anchor clicks can reload the tab). */
+function triggerPngDownload(dataUrl: string, filename: string): void {
+	const a = document.createElement('a');
+	a.download = filename;
+	a.href = dataUrl;
+	a.style.cssText = 'position:fixed;left:-9999px;opacity:0;pointer-events:none';
+	document.body.appendChild(a);
+	a.click();
+	a.remove();
+}
+
 export function mountTimelineEditor(host: HTMLElement): void {
 	host.textContent = '';
 
@@ -915,7 +926,8 @@ export function mountTimelineEditor(host: HTMLElement): void {
 		syncPaletteOnCanvasState();
 	});
 
-	btnExport.addEventListener('click', async () => {
+	btnExport.addEventListener('click', async (ev) => {
+		ev.preventDefault();
 		if (nodes.length === 0) {
 			alert('Drag at least one game from the list onto the canvas before exporting.');
 			return;
@@ -943,10 +955,10 @@ export function mountTimelineEditor(host: HTMLElement): void {
 					height: `${WORLD_H}px`,
 				},
 			});
-			const a = document.createElement('a');
-			a.download = `zelda-timeline-${new Date().toISOString().slice(0, 10)}.png`;
-			a.href = dataUrl;
-			a.click();
+			triggerPngDownload(
+				dataUrl,
+				`zelda-timeline-${new Date().toISOString().slice(0, 10)}.png`,
+			);
 		} catch (err) {
 			console.error(err);
 			const msg = err instanceof Error ? err.message : String(err);
