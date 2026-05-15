@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+	blogPosts,
+	blogImageSrc,
+	formatPostDate,
+	getPostBySlug,
+	renderInlineMarkdown,
+} from '../../lib/blogPosts';
+
+export function getStaticPaths() {
+	return blogPosts.map((post) => ({
+		params: { slug: post.slug },
+	}));
+}
+
+const slug = Astro.params.slug;
+const post = slug ? getPostBySlug(slug) : undefined;
+if (!post) {
+	return Astro.redirect('/blog');
+}
+---
+
+<BaseLayout title={`DragmireXI | ${post.title}`}>
+	<p class="post-back">
+		<a href="/blog" class="post-back-link">← Back to all posts</a>
+	</p>
+
+	<article class="post-card">
+		<header class="post-header">
+			<h1 class="post-title">{post.title}</h1>
+			<p class="post-subtitle">{post.subtitle}</p>
+			<p class="post-date">
+				<time datetime={post.date}>{formatPostDate(post.date)}</time>
+			</p>
+		</header>
+
+		<div class="post-body">
+			{post.blocks.map((block) => {
+				if (block.type === 'text') {
+					return block.header ? (
+						<h2 class="post-heading" set:html={renderInlineMarkdown(block.content)} />
+					) : (
+						<p class="post-text" set:html={renderInlineMarkdown(block.content)} />
+					);
+				}
+				if (block.type === 'image') {
+					return (
+						<figure class="post-figure">
+							<img
+								class="post-image"
+								src={blogImageSrc(block.file)}
+								alt={block.alt ?? ''}
+								loading="lazy"
+								decoding="async"
+							/>
+							{block.caption && (
+								<figcaption
+									class="post-caption"
+									set:html={renderInlineMarkdown(block.caption)}
+								/>
+							)}
+						</figure>
+					);
+				}
+				return (
+					<div
+						class="post-image-row"
+						style={`--row-count:${block.images.length}`}
+					>
+						{block.images.map((img) => (
+							<figure class="post-figure post-figure--inline">
+								<img
+									class="post-image"
+									src={blogImageSrc(img.file)}
+									alt={img.alt ?? ''}
+									loading="lazy"
+									decoding="async"
+								/>
+								{img.caption && (
+									<figcaption
+										class="post-caption"
+										set:html={renderInlineMarkdown(img.caption)}
+									/>
+								)}
+							</figure>
+						))}
+					</div>
+				);
+			})}
+		</div>
+	</article>
+</BaseLayout>
+
+<style>
+	.post-back {
+		max-width: min(52rem, 100%);
+		margin: 0 auto 1rem;
+		text-align: left;
+	}
+
+	.post-back-link {
+		color: var(--power-gold);
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+
+	.post-back-link:hover,
+	.post-back-link:focus-visible {
+		color: var(--ganon-red);
+		text-decoration: underline;
+		outline: none;
+	}
+
+	.post-card {
+		max-width: min(52rem, 100%);
+		margin: 0 auto;
+		border: 1px solid var(--border-subtle);
+		border-radius: 8px;
+		background: var(--card-bg);
+		padding: 2rem 2.25rem;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	.post-header {
+		margin-bottom: 1.5rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.post-title {
+		font-family: 'Cinzel', serif;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 1.6rem;
+		margin: 0 0 0.4rem;
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(1px 1px 3px var(--malice-purple));
+		line-height: 1.25;
+	}
+
+	.post-subtitle {
+		margin: 0 0 0.5rem;
+		font-size: 1rem;
+		color: var(--text-muted);
+		font-style: italic;
+		line-height: 1.4;
+	}
+
+	.post-date {
+		margin: 0;
+		font-size: 0.82rem;
+		color: var(--text-muted-3);
+	}
+
+	.post-body {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.post-text {
+		margin: 0;
+		font-size: 0.97rem;
+		line-height: 1.7;
+		color: var(--body-text);
+	}
+
+	/* Section header inside the post body — same look as .post-title, slightly smaller. */
+	.post-heading {
+		font-family: 'Cinzel', serif;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 1.25rem;
+		margin: 0.5rem 0 0;
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(1px 1px 3px var(--malice-purple));
+		line-height: 1.25;
+	}
+
+	.post-figure {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.post-image {
+		max-width: 100%;
+		height: auto;
+		border-radius: 6px;
+		border: 1px solid var(--border-subtle);
+		display: block;
+	}
+
+	/* Row of two or more images on a single line (markdown: `![](a.png) ![](b.png)`). */
+	.post-image-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+
+	.post-figure--inline {
+		flex: 1 1 calc(
+			(100% - (var(--row-count, 2) - 1) * 0.75rem) / var(--row-count, 2)
+		);
+		min-width: 0;
+	}
+
+	.post-figure--inline .post-image {
+		width: 100%;
+		object-fit: contain;
+	}
+
+	@media (max-width: 480px) {
+		.post-figure--inline {
+			flex-basis: 100%;
+		}
+	}
+
+	.post-caption {
+		font-size: 0.82rem;
+		color: var(--text-muted-3);
+		font-style: italic;
+		text-align: center;
+		max-width: 38rem;
+	}
+
+	@media (max-width: 640px) {
+		.post-card {
+			padding: 1.25rem 1rem;
+		}
+	}
+</style>
