@@ -1,7 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+
+/** Canonical URL for SEO (sitemap, robots). Override with PUBLIC_SITE_URL on Cloudflare Pages if you use a custom domain. */
+const site =
+	process.env.PUBLIC_SITE_URL ||
+	process.env.CF_PAGES_URL ||
+	'http://localhost:4321';
 
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 const postsDir = resolve(projectRoot, 'src/posts');
@@ -36,6 +43,8 @@ function watchBlogPosts() {
 
 // https://astro.build/config
 export default defineConfig({
+	site,
+	integrations: [sitemap()],
 	vite: {
 		optimizeDeps: {
 			include: ['modern-screenshot'],
