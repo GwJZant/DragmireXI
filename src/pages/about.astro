@@ -26,6 +26,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             If you want to follow along, subscribe to my YouTube channel; I also use GitHub for simple projects.
         </p>
     </div>
+
+    <div class="about-contact">
+        <h2 class="section-heading">Contact Me</h2>
+        <p>
+            Email: <a href="mailto:dragmirexi@gmail.com">dragmirexi@gmail.com</a>
+        </p>
+    </div>
 </BaseLayout>
 
 <style>
@@ -54,6 +61,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .about-body p:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-contact {
+        text-align: left;
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-contact p {
+        margin-top: 0;
         margin-bottom: 0;
     }
 
