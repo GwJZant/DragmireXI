@@ -21,7 +21,7 @@ if (!post) {
 }
 ---
 
-<BaseLayout title={`DragmireXI | ${post.title}`}>
+<BaseLayout title={`DragmireXI | ${post.title}`} wide={true}>
 	<p class="post-back">
 		<a href="/blog" class="post-back-link">← Back to all posts</a>
 	</p>
@@ -94,9 +94,11 @@ if (!post) {
 
 <style>
 	.post-back {
-		max-width: min(52rem, 100%);
-		margin: 0 auto 1rem;
+		max-width: min(72rem, 100%);
+		margin: 0 0 1rem;
+		align-self: flex-start;
 		text-align: left;
+		width: 100%;
 	}
 
 	.post-back-link {
@@ -114,7 +116,7 @@ if (!post) {
 	}
 
 	.post-card {
-		max-width: min(52rem, 100%);
+		max-width: min(72rem, 100%);
 		margin: 0 auto;
 		border: 1px solid var(--border-subtle);
 		border-radius: 8px;
@@ -168,6 +170,18 @@ if (!post) {
 		font-size: 0.97rem;
 		line-height: 1.7;
 		color: var(--body-text);
+	}
+
+	.post-body :global(a) {
+		color: var(--power-gold);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.post-body :global(a:hover),
+	.post-body :global(a:focus-visible) {
+		color: var(--ganon-red);
+		outline: none;
 	}
 
 	/* Section header inside the post body — same look as .post-title, slightly smaller. */

@@ -1,4 +1,4 @@
-import { blogImages, blogImageSrc } from './blogImages';
+import { blogImages, blogImageSrc, normalizeBlogImageRef } from './blogImages';
 
 export type TextBlock = {
 	type: 'text';
@@ -7,7 +7,7 @@ export type TextBlock = {
 	header?: boolean;
 };
 
-/** `file` is a filename in `src/assets/blog/` (key on `blogImages`). */
+/** `file` is a path under `src/assets/blog/` (key on `blogImages`), e.g. `Dreamer_1.png` or `tabun/diagram.png`. */
 export type ImageBlock = {
 	type: 'image';
 	file: string;
@@ -33,7 +33,7 @@ export type TheoryPost = {
 	blocks: PostBlock[];
 };
 
-export { blogImages, blogImageSrc };
+export { blogImages, blogImageSrc, normalizeBlogImageRef };
 
 /*
  * Markdown posts live at src/posts/<slug>.md.
@@ -48,8 +48,8 @@ export { blogImages, blogImageSrc };
  *   - Lines starting with one or more `#` followed by space render as section headers
  *     (e.g. `## The Dreamscape of Koholint`).
  *   - Standard markdown image syntax: `![alt](Filename.png)` or
- *     `![alt](Filename.png "Caption text")`. Alt and caption are optional.
- *     The filename must exist in src/assets/blog/.
+ *     `![alt](subfolder/name.png "Caption text")`. Alt and caption are optional.
+ *     The path is relative to `src/assets/blog/` (nested folders allowed).
  *   - To put multiple images on a single row (side-by-side, useful for small
  *     assets), place two or more image tokens on the same line separated by
  *     whitespace, e.g.
@@ -59,7 +59,9 @@ export { blogImages, blogImageSrc };
  * Inline formatting inside text, headers, and image captions:
  *   - `**bold**` or `__bold__`   → <strong>
  *   - `*italic*` or `_italic_`   → <em>
- *   Combine for bold-italic: `***both***`. All other HTML is escaped.
+ *   - `[label](url)` or `[label](url "title")` → <a> (http(s), mailto, and site-relative paths)
+ *   Combine for bold-italic: `***both***`. Emphasis inside link labels works, e.g. `[**bold**](url)`.
+ *   All other HTML is escaped.
  */
 
 const rawPosts = import.meta.glob<string>('../posts/*.md', {
@@ -110,13 +112,48 @@ function escapeHtml(value: string): string {
 		.replace(/'/g, '&#39;');
 }
 
+function sanitizeLinkHref(href: string): string | null {
+	const trimmed = href.trim();
+	if (!trimmed) return null;
+
+	const lower = trimmed.toLowerCase();
+	if (
+		lower.startsWith('javascript:') ||
+		lower.startsWith('data:') ||
+		lower.startsWith('vbscript:')
+	) {
+		return null;
+	}
+
+	if (/^(https?:|mailto:)/i.test(trimmed)) return trimmed;
+	if (trimmed.startsWith('/') || trimmed.startsWith('#') || trimmed.startsWith('.')) {
+		return trimmed;
+	}
+	if (!/^[a-z][a-z0-9+.-]*:/i.test(trimmed)) return trimmed;
+
+	return null;
+}
+
 /**
- * Escapes HTML, then converts inline markdown emphasis to <strong>/<em>.
+ * Escapes HTML, then converts inline markdown links and emphasis to <a>/<strong>/<em>.
+ * Links are converted before emphasis so labels like `[**bold**](url)` work.
  * Bold runs are converted before italics so that `***both***` works correctly.
  * Underscore italics use word-boundary lookarounds so snake_case identifiers are left alone.
  */
 export function renderInlineMarkdown(value: string): string {
 	return escapeHtml(value)
+		.replace(
+			/(?<!!)\[([^\]\n]+)\]\(([^)\s"]+)(?:\s+"([^"]*)")?\)/g,
+			(_match, label: string, href: string, title?: string) => {
+				const safeHref = sanitizeLinkHref(href);
+				if (!safeHref) return `[${label}](${href})`;
+
+				const titleAttr = title ? ` title="${title}"` : '';
+				const external =
+					/^https?:/i.test(safeHref) ? ' rel="noopener noreferrer" target="_blank"' : '';
+				return `<a href="${safeHref}"${titleAttr}${external}>${label}</a>`;
+			},
+		)
 		.replace(/\*\*([^\n]+?)\*\*/g, '<strong>$1</strong>')
 		.replace(/__([^\n]+?)__/g, '<strong>$1</strong>')
 		.replace(/\*([^\s*][^\n*]*?[^\s*]|[^\s*])\*/g, '<em>$1</em>')
@@ -140,7 +177,9 @@ function parseImageOnlyLine(
 		if (between.trim() !== '') return null;
 		const [, alt, file, caption] = match;
 		if (!file) return null;
-		const token: { file: string; alt?: string; caption?: string } = { file };
+		const token: { file: string; alt?: string; caption?: string } = {
+			file: normalizeBlogImageRef(file),
+		};
 		if (alt) token.alt = alt;
 		if (caption) token.caption = caption;
 		tokens.push(token);

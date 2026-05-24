@@ -22,3 +22,16 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.tmp-gdoc-export.html
+scripts/apply-tabun-figures.mjs
+scripts/debug-match.mjs
+scripts/extract-resources.mjs
+scripts/fix-line-breaks.mjs
+scripts/fix-md-artifacts.mjs
+scripts/fix-orphan-asterisks.mjs
+scripts/inspect-dist.mjs
+scripts/inspect-gdoc-formatting.mjs
+scripts/recover-from-dist.mjs
+scripts/restore-resources.mjs
+scripts/sync-tabun-formatting.mjs
+scripts/convert-tabun-google-doc.mjs
