@@ -26,6 +26,39 @@ const luashitacastProfileLinks: LuashitacastProfileLink[] = [
 	<h1 class="hero-title">Final Fantasy XI</h1>
 	<p class="tagline">Luashitacast profiles and content guides</p>
 	
+		<details class="page-section collapsible" open aria-labelledby="theories-heading">
+		<summary class="collapsible-summary">
+			<span class="collapsible-chevron" aria-hidden="true">▶</span>
+			<h2 class="hero-title section-heading" id="theories-heading">External Theories</h2>
+		</summary>
+		<div class="collapsible-panel">
+			<p class="section-lede">
+				Links to Zelda theory posts and threads I have found elsewhere.
+			</p>
+			{
+				luashitacastProfileLinks.length === 0 ? (
+					<p class="empty-note">Nothing listed yet.</p>
+				) : (
+					<ul class="theory-list">
+						{luashitacastProfileLinks.map(({ title, description, url, author, source }) => (
+							<li class="theory-card">
+								<a class="theory-title-link" href={url} target="_blank" rel="noopener noreferrer">
+									{title}
+									<span class="theory-external-mark" aria-hidden="true">
+										{' '}
+										↗
+									</span>
+								</a>
+								{author ? <p class="theory-author">By {author}</p> : null}
+								{source ? <p class="theory-source">{source}</p> : null}
+								<p class="theory-desc">{description}</p>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+	</details>
 </BaseLayout>
 
 <style>
