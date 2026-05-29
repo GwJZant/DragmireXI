@@ -7,7 +7,7 @@ type LuashitacastProfileLink = {
 	url: string;
 	/** Original writer or credited theorist when known */
 	author?: string;
-	/** Optional, e.g. "Reddit — r/truezelda" or "Zelda Universe forums" */
+	/** Optional, e.g. "Github" */
 	source?: string;
 };
 
@@ -17,46 +17,15 @@ const luashitacastProfileLinks: LuashitacastProfileLink[] = [
 		description:
 			'This is a working profile used on my alt. Its BLM level is only 60 at this moment so it is not equipped for anything endgame yet.',
 		url: 'https://github.com/GwJZant/DragLuashitacast/blob/main/Ezlo_100021/BLM.lua',
+		source: 'Github',
 	}
 ];
 ---
+
 <BaseLayout title="DragmireXI | FFXI">
 	<h1 class="hero-title">Final Fantasy XI</h1>
 	<p class="tagline">Luashitacast profiles and content guides</p>
 	
-	<details class="page-section collapsible" open aria-labelledby="theory-heading">
-		<summary class="collapsible-summary">
-			<span class="collapsible-chevron" aria-hidden="true">▶</span>
-			<h2 class="hero-title section-heading" id="theory-heading">Luashitacast Profiles</h2>
-		</summary>
-		<div class="collapsible-panel">
-			<p class="section-lede">
-				Luashitacast profiles created by myself. These are not intended to be as comprehensive as Rag's profiles. These are created iteratively to do what I personally want them to do and the most unique feature of my profiles is probably the embedded hotkey commands. Some people use addona like thotbar to have dynamic hotkeys, but I went the direction of defining those directly in my profiles.
-			</p>
-			{
-				luashitacastProfileLinks.length === 0 ? (
-					<p class="empty-note">Nothing listed yet.</p>
-				) : (
-					<ul class="theory-list">
-						{LuashitacastProfileLink.map(({ title, description, url, author, source }) => (
-							<li class="theory-card">
-								<a class="theory-title-link" href={url} target="_blank" rel="noopener noreferrer">
-									{title}
-									<span class="theory-external-mark" aria-hidden="true">
-										{' '}
-										↗
-									</span>
-								</a>
-								{author ? <p class="theory-author">By {author}</p> : null}
-								{source ? <p class="theory-source">{source}</p> : null}
-								<p class="theory-desc">{description}</p>
-							</li>
-						))}
-					</ul>
-				)
-			}
-		</div>
-	</details>
 </BaseLayout>
 
 <style>
