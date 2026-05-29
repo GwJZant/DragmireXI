@@ -24,10 +24,10 @@ const luashitacastProfileLinks: LuashitacastProfileLink[] = [
 	<h1 class="hero-title">Final Fantasy XI</h1>
 	<p class="tagline">Luashitacast profiles and content guides</p>
 	
-	<details class="page-section collapsible" open aria-labelledby="lua-heading">
+	<details class="page-section collapsible" open aria-labelledby="theory-heading">
 		<summary class="collapsible-summary">
 			<span class="collapsible-chevron" aria-hidden="true">▶</span>
-			<h2 class="hero-title section-heading" id="lua-heading">Luashitacast Profiles</h2>
+			<h2 class="hero-title section-heading" id="theory-heading">Luashitacast Profiles</h2>
 		</summary>
 		<div class="collapsible-panel">
 			<p class="section-lede">
@@ -157,9 +157,66 @@ const luashitacastProfileLinks: LuashitacastProfileLink[] = [
 		color: var(--text-muted-4);
 	}
 
+	.resource-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.25rem;
+		align-items: stretch;
+	}
+
 	@media (max-width: 640px) {
 		.resource-list {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.resource-item {
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--border-subtle);
+		border-radius: 6px;
+		background: var(--card-bg);
+		min-height: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resource-head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.resource-head strong {
+		overflow-wrap: break-word;
+	}
+
+	.resource-desc {
+		font-size: 0.9rem;
+		color: var(--text-muted-2);
+	}
+
+	.resource-link {
+		display: inline-block;
+		margin-top: auto;
+		padding-top: 0.75rem;
+		color: var(--power-gold);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		font-weight: 600;
+	}
+
+	.resource-link:hover {
+		color: var(--ganon-red);
+	}
+
+	.resource-pending {
+		margin-top: auto;
+		padding-top: 0.75rem;
+		font-size: 0.9rem;
+		color: var(--text-muted-3);
 	}
 </style>
