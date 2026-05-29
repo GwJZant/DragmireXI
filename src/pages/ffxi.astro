@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+type LuashitacastProfileLink = {
+	title: string;
+	description: string;
+	url: string;
+	/** Original writer or credited theorist when known */
+	author?: string;
+	/** Optional, e.g. "Reddit — r/truezelda" or "Zelda Universe forums" */
+	source?: string;
+};
+
+const luashitacastProfileLinks: LuashitacastProfileLink[] = [
+	{
+		title: 'Black Mage',
+		description:
+			'This is a working profile used on my alt. Its BLM level is only 60 at this moment so it is not equipped for anything endgame yet.',
+		url: 'https://github.com/GwJZant/DragLuashitacast/blob/main/Ezlo_100021/BLM.lua',
+	}
+];
+---
+<BaseLayout title="DragmireXI | FFXI">
+	<h1 class="hero-title">Final Fantasy XI</h1>
+	<p class="tagline">Luashitacast profiles and content guides</p>
+	
+	<details class="page-section collapsible" open aria-labelledby="lua-heading">
+		<summary class="collapsible-summary">
+			<span class="collapsible-chevron" aria-hidden="true">▶</span>
+			<h2 class="hero-title section-heading" id="lua-heading">Luashitacast Profiles</h2>
+		</summary>
+		<div class="collapsible-panel">
+			<p class="section-lede">
+				Luashitacast profiles created by myself. These are not intended to be as comprehensive as Rag's profiles. These are created iteratively to do what I personally want them to do and the most unique feature of my profiles is probably the embedded hotkey commands. Some people use addona like thotbar to have dynamic hotkeys, but I went the direction of defining those directly in my profiles.
+			</p>
+			{
+				luashitacastProfileLinks.length === 0 ? (
+					<p class="empty-note">Nothing listed yet.</p>
+				) : (
+					<ul class="theory-list">
+						{LuashitacastProfileLink.map(({ title, description, url, author, source }) => (
+							<li class="theory-card">
+								<a class="theory-title-link" href={url} target="_blank" rel="noopener noreferrer">
+									{title}
+									<span class="theory-external-mark" aria-hidden="true">
+										{' '}
+										↗
+									</span>
+								</a>
+								{author ? <p class="theory-author">By {author}</p> : null}
+								{source ? <p class="theory-source">{source}</p> : null}
+								<p class="theory-desc">{description}</p>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+	</details>
+</BaseLayout>
+
+<style>
+	.hero-title {
+		background: linear-gradient(to bottom, var(--ganon-red), var(--power-gold));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px 5px var(--malice-purple));
+	}
+
+	.tagline {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.page-section {
+		text-align: left;
+		max-width: min(48rem, 100%);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 2rem;
+	}
+
+	.page-section:first-of-type {
+		margin-top: 0;
+	}
+
+	.collapsible-summary {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.collapsible-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.collapsible-summary::marker {
+		content: '';
+	}
+
+	.collapsible-summary:focus {
+		outline: none;
+	}
+
+	.collapsible-summary:focus-visible {
+		outline: 2px solid var(--power-gold);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
+	.collapsible-summary .section-heading {
+		margin-bottom: 0;
+		flex: 1;
+		text-align: left;
+	}
+
+	.collapsible-chevron {
+		display: inline-block;
+		flex-shrink: 0;
+		font-size: 0.55rem;
+		line-height: 1;
+		color: var(--power-gold);
+		transform: rotate(0deg);
+		transition: transform 0.2s ease;
+		margin-top: 0.1em;
+	}
+
+	details[open] > .collapsible-summary .collapsible-chevron {
+		transform: rotate(90deg);
+	}
+
+	.collapsible-panel {
+		margin-top: 0.75rem;
+	}
+
+	.section-heading {
+		margin-top: 0;
+		margin-bottom: 0.75rem;
+		font-size: 1.25rem;
+	}
+
+	.section-lede {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.empty-note {
+		font-style: italic;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: var(--text-muted-4);
+	}
+
+	@media (max-width: 640px) {
+		.resource-list {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
