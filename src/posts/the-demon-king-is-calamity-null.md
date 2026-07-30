@@ -110,4 +110,5 @@ To understand how the history of Hyrule unfolds under this paradigm, we can trac
 3. The Era of Skyward Sword: Link defeats Demise, destroying his physical vessel. However, because Null remains trapped and active beneath the earth, the true source of that hatred remains. 
 
 4. The Era of Successors: As ages pass, the malice radiating from Null continues to find new hosts and form new Calamities. Mortal men with wicked hearts like Ganondorf, or ancient evil spirits like Malladus, draw upon this same primordial wellspring of a malicious Force. In doing so, they inherit Null's intrinsic, unending hatred of the gods. 
+
 5. The Era of the Wild: Sealed beneath Hyrule Castle, Ganondorf inadvertently replicates Null’s phenomenon on a smaller scale: his trapped body leaks Malice to spawn Calamity Ganon, creating a Calamity of a Calamity. 
