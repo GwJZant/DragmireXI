@@ -103,7 +103,7 @@ The Demon King is not merely a single person, a recurring soul, or a localized c
 
 To understand how the history of Hyrule unfolds under this paradigm, we can trace a timeline of Null’s influence across the eras: 
 
-1. The Era of Creation & Sealing: The Golden Goddesses form the World of Light as a prison around Null. Deep beneath the earth, Null’s intense, festering hatred of the gods begins to radiate into the earth.
+1. The Era of Creation & Sealing: The Golden Goddesses form the World of Light as a prison around Null. Deep beneath the earth, Null’s intense, festering hatred of the gods begins to radiate into the world.
 
 2. The Era of Hylia (The First Calamity): Over eons, this malice condenses into a physical, sentient form: Demise, the very first Calamity of Null. Driven by Null's instinctual grudge, Demise breaches the surface with his demon army to destroy the Goddess’s realm and claim the Triforce. 
 
