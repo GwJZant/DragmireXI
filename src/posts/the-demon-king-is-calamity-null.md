@@ -83,6 +83,14 @@ Why does Malladus, a being with no connection to Ganon, turn into the form of a 
 
 These Demon King appearances have been consistent enough that it would be reasonable to assume even a brand new Demon King would still resemble Ganon even if it were not related to him.
 
+## Exhibit 6 - Malladus’s Final Fight
+
+This section was added after I published this theory (mostly because I am fairly unfamiliar with Spirit Tracks compared to other games), but there is a notable piece of dialogue from the final fight after you strip Malladus of Zelda's body and he is forced to manifest through Cole's.
+
+![](calamity-null-4.png)
+
+It has been a point of contention while comparing the motivations of Null with that of the Demon Tribe that while Null seeks destruction of the world, the Demon Tribe seeks to dominate the world as well. However, we have also seen what a demon is willing to do when backed against the wall and that is to destroy the world itself.
+
 ## One Additional Point
 
 I think something that must be addressed here is this: What is the point of any of this when we can just assume Demise has always existed and is the true source of beings like Ganondorf and Malladus?
