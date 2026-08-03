@@ -156,6 +156,7 @@ This is also difficult to answer as this is a narrative decision and isn’t som
 2. It provides an explanation for why Ganondorf in particular seems to keep coming back as Ganon rather than any other potential non-human Demon King like Malladus. It links Ganondorf’s recurring presence as a consequence of a very specific action.
 
 3. It provides a narrative means to escape Ganondorf being the main villain. If, for whatever reason, the Zelda writers had the intention to redeem Ganondorf in some way to allow for a new recurring villain, breaking this curse on Ganondorf would be a pathway to introduce a non-villain Ganondorf.
+
 4. It bolsters the gravity of Ganondorf compared to any other Demon King. When it comes to a villain like Demise or Malladus, they can genuinely be defeated. However, Ganon is like an infection. You can eradicate any particular iteration of Ganon but because of his human origins, he has a sort of immortal nature to himself that is unique to Ganon so long as Ganondorf’s spirit remains corrupted and within the cycle of reincarnation.
 
 ## Conclusion
