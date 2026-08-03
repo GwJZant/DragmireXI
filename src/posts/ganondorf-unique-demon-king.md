@@ -153,7 +153,7 @@ This is also difficult to answer as this is a narrative decision and isn’t som
 
 1. It turns Groose into a more meaningful character and it recontextualizes Ganondorf as the result of the Demon Tribe corrupting an otherwise redeemable figure that has personal history with the original hero.
 
-2. It provides an explanation for why Ganondorf in particular seems to keep coming back as Ganon rather than any other potential non-human Demon King like Malladus. It links Ganondorf’s recurring presence as a consequence of a very specific action.
+2. It provides an explanation for why Ganondorf in particular seems to keep coming back as Ganon rather than any other potential non-human Demon King like Malladus appearing. It links Ganondorf’s recurring presence as a consequence of a very specific action.
 
 3. It provides a narrative means to escape Ganondorf being the main villain. If, for whatever reason, the Zelda writers had the intention to redeem Ganondorf in some way to allow for a new recurring villain, breaking this curse on Ganondorf would be a pathway to introduce a non-villain Ganondorf.
 
