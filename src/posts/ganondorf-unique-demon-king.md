@@ -151,19 +151,19 @@ That being said, there is another followup question: Why should we assume anyone
 
 This is also difficult to answer as this is a narrative decision and isn’t something we can demonstrate SHOULD happen any particular way. Whether or not you think this makes sense will depend on how you, as a fan, perceive this in terms of narrative satisfaction. I do think this is a narratively attractive explanation for a few reasons:
 
-1. It turns Groose into a more meaningful character and it recontextualizes Ganondorf as the result of the Demon Tribe corrupting an otherwise redeemable figure that has personal history with the original hero.
+1. It turns Groose into a more meaningful character and it recontextualizes Ganondorf as the result of the Demon Tribe corrupting an otherwise redeemable spirit; one that has personal history with the original hero.
 
-2. It provides an explanation for why Ganondorf in particular seems to keep coming back as Ganon rather than any other potential non-human Demon King like Malladus appearing. It links Ganondorf’s recurring presence as a consequence of a very specific action.
+2. It provides an explanation for why Ganondorf/Ganon in particular seems to keep coming back rather than any other potential non-human Demon King similar to Malladus appearing. It links Ganondorf’s recurring presence as a consequence of a very specific action.
 
-3. It provides a narrative means to escape Ganondorf being the main villain. If, for whatever reason, the Zelda writers had the intention to redeem Ganondorf in some way to allow for a new recurring villain, breaking this curse on Ganondorf would be a pathway to introduce a non-villain Ganondorf.
+3. It provides a narrative means to escape Ganondorf being the main villain. If, for whatever reason, the Zelda writers had the intention to redeem Ganondorf in some way to allow for a new recurring villain, breaking this curse on Ganondorf would be a pathway to introduce a non-villain Ganondorf. (I do not personally believe they will do this unless it's in some kind of alternate timeline, but the option still remains)
 
-4. It bolsters the gravity of Ganondorf compared to any other Demon King. When it comes to a villain like Demise or Malladus, they can genuinely be defeated. However, Ganon is like an infection. You can eradicate any particular iteration of Ganon but because of his human origins, he has a sort of immortal nature to himself that is unique to Ganon so long as Ganondorf’s spirit remains corrupted and within the cycle of reincarnation.
+4. It bolsters the gravity of Ganondorf compared to any other Demon King. When it comes to a villain like Demise or Malladus, they can genuinely be defeated. However, Ganon is unique in that you can eradicate any particular iteration of him but because of his human origins, he has a sort of immortal nature to himself so long as Ganondorf’s spirit remains corrupted and within the cycle of reincarnation. Rather than any defeat of Ganon meaning the end of him, it rather just postpones Ganon until Ganondorf reincarnates.
 
 ## Conclusion
 
 Ganondorf is unique among Demon Kings because he is not a pure demon of the Demon Tribe; he is a mortal man born into a lineage uniquely cursed to carry the Demon Tribe’s hatred of the gods. By tracing the physical, psychological, and thematic origins of the Gerudo back to Groose in Skyward Sword, a complete narrative triangle emerges: 
 
-1. The Physical & Virtue Blueprint: Groose possessed the distinct physical traits that would define the Gerudo phenotype: red hair, amber eyes, muscular build, and sharp features. Furthermore, Groose represented the virtue of Power in Skyward Sword's narrative. Though he overcame his initial cruelty through humility and camaraderie, his raw ambition and physical strength provided the exact template for what paragon of the virtue of Power could be. 
+1. The Physical & Virtue Blueprint: Groose possessed most of the distinct physical traits that would define the Gerudo phenotype: red hair, amber eyes, and a large, muscular build. Furthermore, Groose represented the virtue of Power in Skyward Sword's narrative. Though he overcame his initial cruelty through humility and camaraderie, his raw ambition and physical strength provided the exact template for what paragon of the virtue of Power could be. 
 
 2. The Curse of the Bloodline: Upon Demise’s defeat, the orphaned hatred of the Demon Tribe latched on to the spirit of a human host to survive across generations as the same reincarnated being. Bound to the bloodline of Groose, the third human present at the final battle, this curse reshaped his descendants into the all-female Gerudo tribe, dooming them to serve as the biological vessel for the Demon King's return. 
 
