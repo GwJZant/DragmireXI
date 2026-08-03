@@ -11,11 +11,17 @@ A Link Between Worlds presents players with a version of Hyrule that appears, on
 In addition to the different Triforce story, the following are apparent further differences between Hyrule and Lorule based on what we see in-game or know from established lore:
 
 1. Lorule has no Master Sword
+
 2. Lorule has no Fi
+
 3. Lorule has no Skyward Sword
+
 4. Lorule has no Spirit of the Hero
+
 5. Lorule has no Demise
+
 6. Demons can exist without Demise
+
 7. Lorule has no Goddess Hylia
 
 With these facts established, I will propose a Lorulean origin for the character Demise and explain how and why this could happen.
