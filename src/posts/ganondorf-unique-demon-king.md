@@ -99,7 +99,7 @@ Hopefully by this point I have demonstrated that Groose bears a resemblance to G
 
 I would like to consider the scene where Demise delivers his speech to Link about the “Curse of the Demon Tribe.”
 
-*Extraordinary. You stand as a paragon of your kind, human.*
+*"Extraordinary. You stand as a paragon of your kind, human.*
 
 *You fight like no man or demon I have ever known. Though this is not the end.*
 
@@ -107,7 +107,7 @@ I would like to consider the scene where Demise delivers his speech to Link abou
 
 *I will rise again! Those like you... Those who share the blood of the goddess and the spirit of the hero... They are eternally bound to this curse.*
 
-*An incarnation of my hatred shall ever follow your kind, dooming them to wander a blood-soaked sea of darkness for all time! - Demise*
+*An incarnation of my hatred shall ever follow your kind, dooming them to wander a blood-soaked sea of darkness for all time!" - Demise*
 
 What is typically focused on with this speech is what Demise exactly means here by a “curse” in the sense that it is ambiguous if Demise is placing an actual curse or hex at that moment, or if Demise is describing the inevitable nature of the Demon Tribe to spawn a new Demon King eventually.
 
