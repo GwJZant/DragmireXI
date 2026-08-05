@@ -97,7 +97,7 @@ Hopefully by this point I have demonstrated that Groose bears a resemblance to G
 
 ## Exhibit 2b - Groose’s Thematic Connection to Ganondorf
 
-In this theory, I am attempting to make real connections between Groose and Ganondorf, and in doing so I need to provide some threads between these two characters, generally speaking, that show similarities.
+In this theory, I am attempting to make real connections between Groose and Ganondorf, and in doing so I need to provide some threads between these two characters that, generally speaking, show similarities.
 
 Think back to Ganondorf from the Wild Era in particular. It is notable that Ganondorf did not seem to think terribly of the ancient Zonai, rebuffing their characterization as being like gods.
 
@@ -139,7 +139,7 @@ I think a particularly notable piece of dialogue near the end of this conversati
 
 *"Huh? Oh...now I getcha. Link, Grannie here has been trying to tell me you're gonna be the big hero who rescues Zelda. **What a joke! Look, all I've heard so far is a bunch of babbling about destiny, but that's a load of garbage.** I know you, and you're no hero, shrimp! Waaaah!"*
 
-Groose has been told it is fate to be, in his eyes, powerless in the quest to save Zelda (He is not literally powerless; Impa tells him as much, but Groose feels useless here and that is what it is important). He scoffs at his inability to be in control of his own fate and uses that frustration to motivate him to find his own way to help.
+Groose has been told it is fate to be, in his eyes, powerless in the quest to save Zelda (He is not literally powerless; Impa tells him as much, but Groose feels useless here and that is what it is important). He scoffs at his inability to be in control of his own fate and later uses that frustration to motivate him to find his own way to help.
 
 ## Exhibit 3 - The Curse of the Demon Tribe
 
