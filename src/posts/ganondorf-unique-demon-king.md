@@ -141,6 +141,8 @@ I think a particularly notable piece of dialogue near the end of this conversati
 
 Groose has been told it is fate to be, in his eyes, powerless in the quest to save Zelda (He is not literally powerless; Impa tells him as much, but Groose feels useless here and that is what it is important). He scoffs at his inability to be in control of his own fate and later uses that frustration to motivate him to find his own way to help.
 
+Just like Ganondorf, Groose believes himself to be the pinnacle of humanity and the one most suited to be "the guy". Ganondorf and Groose both take an unfortunate destiny as a challenge to overcome rather than succumbing to that fate.
+
 ## Exhibit 3 - The Curse of the Demon Tribe
 
 I would like to consider the scene where Demise delivers his speech to Link about the “Curse of the Demon Tribe.”
