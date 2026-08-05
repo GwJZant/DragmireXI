@@ -47,7 +47,7 @@ One of the characteristics the Gerudo have that Groose did not have is the darke
 
 Despite not sharing all traits, there are more things in common with the Gerudo than not. In all of Skyward Sword, no other character is even close to resembling the Gerudo to the degree Groose does.
 
-## Exhibit 2 - Groose’s relationship with Link
+## Exhibit 2a - Groose’s relationship with Link
 
 For the previous exhibit, we compared the visual similarities between Groose and the Gerudo. This time, let’s examine the relationship Groose had with Link and contrast that with the relationship between Ganondorf and Link.
 
@@ -94,6 +94,52 @@ Let’s take a moment to think about the development and consider the path he wa
 Without the mentorship of Impa or the forced development he underwent by participating in the conflict, Groose would have grown into a wicked man; the kind of disposition somebody like Ganondorf would have prior to any kind of transformation into the Demon King.
 
 Hopefully by this point I have demonstrated that Groose bears a resemblance to Ganondorf both visually and in terms of the many shared personality traits.
+
+## Exhibit 2b - Groose’s Thematic Connection to Ganondorf
+
+In this theory, I am attempting to make real connections between Groose and Ganondorf, and in doing so I need to provide some threads between these two characters, generally speaking, that show similarities.
+
+Think back to Ganondorf from the Wild Era in particular. It is notable that Ganondorf did not seem to think terribly of the ancient Zonai, rebuffing their characterization as being like gods.
+
+Rather, it seems Ganondorf resents that Rauru possesses a great deal of power that was gained through coincidental means. Ganondorf is weaker than Rauru for the sole reason that Rauru happens to possess a Secret Stone, not because Rauru is inherently more powerful than Ganondorf or that Rauru honed his skills or trained any harder than Ganondorf.
+
+Ganondorf particularly seems to resent those who possess unearned power and use that power to maintain a peaceful status quo. Ganondorf believes in the principle of "might makes right" and that those with power should use it to exert control over the rest.
+
+Let us now examine some pieces of dialogue from Groose during the early game:
+
+*"What's your problem, anyway? Oh, wait...I got it. You're here to talk about today's race. I can see it in those dopey eyes of yours. They're pleading, "Oh, Groose, can you please find it in your heart to let me win today? Please!""*
+
+*"You're just desperate to win so you can get some alone time with Zelda up on the Statue of the Goddess at the end of the ceremony. Well, sorry, pal. **Groose doesn't do charity for wimps. My advice? Work hard and wish with all your heart. You might even come in second.**"*
+
+The context of the above quote comes from Link approaching Groose prior to the ceremony. Groose smugly shoos Link away telling Link that if he wants some advice he should work hard and try hard, and even then he won't match Groose.
+
+The conversation continues:
+
+*"You know, we're all getting tired of how you never let anyone forget you and Zelda go way back. You've been friends since you were kids? Big deal. **It doesn't change the fact that you float through life with your head in the clouds. Would you wake up, straighten up, and grow a backbone already? Dopes like you are dragging our honored academy through the mud.**"*
+
+Groose criticizes Link because he and Zelda have a special relationship despite Link, from Groose's perspective, doing absolutely nothing to improve himself; he just stumbled into being talented and Zelda's special person and Groose resents Link for that.
+
+Let us pivot to another character trait of Ganondorf. **He frequently takes advantage of others, letting them act while he watches from the shadows then stepping in at the right moment to seize power.**
+
+Notable examples include Ganondorf sneaking into the Sacred Realm as Link pulls the Master Sword in Ocarina of Time, Ganondorf assassinating Sonia in Tears of the Kingdom, and Ganondorf tricking Link into freeing Vaati in Four Swords Adventures. There are some more less obvious examples but these are clear examples of this behavior.
+
+Groose does exactly this in Skyward Sword:
+
+*"What's going on here? Ever since Zelda vanished, you've been in and out of town all in a hurry! So I figured I'd tail you, and you might lead me to Zelda."*
+
+Groose wants to know what happened to Zelda and he observes Link acting suspiciously and figures there is some connection so he observes and follows Link with the objective of using Link to find Zelda first and claim her affection for himself. This much becomes obvious through additional dialogue:
+
+*"So lemme see if I've got this right. The old lady living in the temple down the road from here knows where Zelda is? I see... Right, Link. Thanks for getting me here. You've done a good job. You can head home. Big Groose will handle the search for Zelda from here. Yup. I'll track her down, save her, and then give her a lift back to Skyloft... Then when we get back. I'll ask her if she wants to make our whole going-out thing official, and then the two of us will get some quality time together. Anyway, the point is your work here is done. I got it covered from here! Now, it's off to find that old lady you were talking about. Catch you later, Link!"*
+
+When Impa informs Groose that Link is destined to save Zelda and not himself, he is angered by such an audacious claim and seems to be in disbelief at the notion that someone other than himself would be more suited for this task:
+
+*"Shut it, Grannie! You obviously don't know me well, 'cause if you did, you'd know that if anyone's gonna save Zelda, it's Groose! How could it not be me? Plus, if it ain't me, why would I even be here? Pffft. If I'm not up to the job of being the hero, just who is?"*
+
+I think a particularly notable piece of dialogue near the end of this conversation really nails the parallel between Ganondorf and Groose:
+
+*"Huh? Oh...now I getcha. Link, Grannie here has been trying to tell me you're gonna be the big hero who rescues Zelda. **What a joke! Look, all I've heard so far is a bunch of babbling about destiny, but that's a load of garbage.** I know you, and you're no hero, shrimp! Waaaah!"*
+
+Groose has been told it is fate to be, in his eyes, powerless in the quest to save Zelda (He is not literally powerless; Impa tells him as much, but Groose feels useless here and that is what it is important). He scoffs at his inability to be in control of his own fate and uses that frustration to motivate him to find his own way to help.
 
 ## Exhibit 3 - The Curse of the Demon Tribe
 
