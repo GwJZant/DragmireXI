@@ -73,6 +73,8 @@ As for the Sols, their presence demonstrates that the nature of the Palace of Tw
 
 These Sols purify the space around it of darkness, including the very Twili residing there. This purification is apparent by examining the visual design of the common Twili. Their actual bodies are a light blue but a black shadow covers most of their bodies. The portion of their light blue skin that is visible looks as if a light is revealing their skin; they are partially purified at this point.
 
+![](Groose2.png "The body of a common Twili. Their bodies are naturally light blue with a dark shadow covering them. They also emanate a green energy from their bodies.")
+
 **2. The Twilight Realm as an "Underworld"**
 
 Early in the game, Rusl talks to Link about how the Twilight feels like the world of the spirits intersecting with the world of the living and how that time of day is when you can feel those lingering spirits the most. When Link finds Auru later in the game at Lake Hylia, he also characterizes the Twilight Realm as the Underworld.
