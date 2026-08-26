@@ -8,8 +8,8 @@ date: '2026-08-26'
 
 I will try not to fluff up what I am talking about in this post. I will be assuming the following two things:
 
-1. The Twili and the Zonai ARE directly related.
-2. The Wild Era's Hyrule is a refounded kingdom. (I will address True Founding later, but it's complicated address both at once)
+**1. The Twili and the Zonai ARE directly related.**
+**2. The Wild Era's Hyrule is a refounded kingdom. (I will address True Founding later, but it's complicated address both at once)**
 
 I will state my conclusion first then address the logic after:
 
@@ -35,11 +35,11 @@ The Fused Shadow: This artifact is extremely fascinating. On the front, we see o
 
 There is actually one more tribe that I have seen commonly attributed to the Interlopers, one that even I have entertained plenty of times: the Gerudo. This one is brought up for a couple reasons:
 
-1. The Gerudo are also skilled with magic and are more typically antagonistic to Hyrule.
+**1. The Gerudo are also skilled with magic and are more typically antagonistic to Hyrule.**
 
-2. The Gerudo have red hair, and Midna and Zant have red hair or at least close enough to red to consider.
+**2. The Gerudo have red hair, and Midna and Zant have red hair or at least close enough to red to consider.**
 
-3. Zant's clothing has a Gerudo crest on it, even before meeting Ganon.
+**3. Zant's clothing has a Gerudo crest on it, even before meeting Ganon.**
 
 I think ultimately, the case for the Gerudo is simply weaker than that of the Sheikah. The Twili seem to have multiple men in their society. Zant is male, but as far as we can tell all of the regular Twili also appear masculine. Quite contrary to the Gerudo, the Twili appear to be a male dominated society if we are to take the Twili we can see as a representation of the Twili.
 
@@ -63,7 +63,7 @@ With these points, I believe it is reasonable to conclude that, regardless of ho
 
 Let's look at a few perspectives.
 
-1. The nature of the Twilight Realm and the Sols: 
+**1. The nature of the Twilight Realm and the Sols: **
 
 If you take the story of Twilight Princess at face value, you would be led to believe the Twilight Realm is merely a garbage bin. You throw a dangerous person in it and they are trapped there forever; it is a perfect prison.
 
@@ -73,7 +73,7 @@ As for the Sols, their presence demonstrates that the nature of the Palace of Tw
 
 These Sols purify the space around it of darkness, including the very Twili residing there. This purification is apparent by examining the visual design of the common Twili. Their actual bodies are a light blue but a black shadow covers most of their bodies. The portion of their light blue skin that is visible looks as if a light is revealing their skin; they are partially purified at this point.
 
-2. The Twilight Realm as an "Underworld"
+**2. The Twilight Realm as an "Underworld"**
 
 Early in the game, Rusl talks to Link about how the Twilight feels like the world of the spirits intersecting with the world of the living and how that time of day is when you can feel those lingering spirits the most. When Link finds Auru later in the game at Lake Hylia, he also characterizes the Twilight Realm as the Underworld.
 
@@ -83,13 +83,15 @@ In Buddhism, there is the concept of karma; the actions you take in life accrue 
 
 Think about the Twilight Realm as a plane of Naraka. The Interlopers aligned themselves with dark magic and were sent to the Underworld to use up their negative karma. Eventually, that negative karma will be gone and the Twili will be spiritually ready to be "reborn" or to join the World of Light once more.
 
-3. Pure Twili Magic
+**3. Pure Twili Magic**
 
 I think it is unclear exactly what kind of magic the Interlopers would have used while in Hyrule, but I think what is notable is the direction their magic is going during Twilight Princess. A unique trait about the Twili that is very rarely addressed is how the Twili are literally bursting with a greenish-blue energy. This color is very similar to the magic that Sol-infused technology glows with (doors, floating platforms, light switches), although is more green that the Sol's light.
 
 If you think about the nature of Twilight Princess and its depiction of spirits as this green color, and the re-use of this color scheme in Breath of the Wild and Tears of the Kingdom, this green color is likely the color of Spirit energy. Therefore, we can see the Twili still are holding massive amounts of magical power. We also know the Sols explicitly drive away Darkness just like the Master Sword is known to do. Therefore, it becomes clearer that the Sols are purging Darkness from the Twili. This purification is visually communicated to the player via the design of the Twili.
 
-Ultimately, I think what is demonstrated here is the Twili have not be abandoned by the gods. The gods put the Interlopers in the Twilight Realm to be purified in a contained space.
+I do also want to make a point to say I don't think the Shadow Magic used by the Interlopers is the kind of magic that the Twili would embody by the end of their purification; rather, it's the Light-aligned part of that Shadow Magic. If you think of Shadow Magic is a combination of Light and Darkness, the magic or energy the Twili would come to embody would be the Light portion of that magic.
+
+Ultimately though, I think what is demonstrated here is the Twili have not been abandoned by the gods. The gods put the Interlopers in the Twilight Realm to be purified in a contained space.
 
 If the gods chose to remediate the Interlopers back into pure beings instead of destroying or abandoning them, then perhaps there is a purpose behind that action.
 
@@ -97,7 +99,7 @@ If the gods chose to remediate the Interlopers back into pure beings instead of 
 
 In this section, I want to talk about the conditions around when the Zonai would've first appeared in Hyrule.
 
-1. Physical and spiritual evolution of the Twili
+**1. Physical and spiritual evolution of the Twili**
 
 There is an obvious question to ask when comparing the Twili and Zonai. The Twili are blue-skinned humanoids without much animal-like visuals (with the exception of Zant who looks somewhat like a snake, almost Voldemort-like). The Zonai, on the other hand, look like human-animal hybrids. **How exactly are the Twili supposed to become the Zonai?**
 
@@ -129,7 +131,7 @@ Original: Skyward Sword (Hylia-sourced)
 2nd Gen: Ocarina of Time (SS Zelda-sourced)
 3rd Gen: Age of Imprisonment (Zonai-sourced)
 
-2. The Intervention of the Gods
+**2. The Intervention of the Gods**
 
 It is established lore that, for whatever reason, sometimes a Calamity befalls Hyrule without a hero present to destroy it. In Wind Waker, it was because the spirit of the hero left the timeline. In A Link to the Past, it was apparently because the hero of that era (Hero of Time) failed to defeat Ganon.
 
@@ -147,15 +149,15 @@ There is actually one other time this has potentially happened: The Minish.
 
 We don't know the true origin of the Minish other than that they live in the "Minish Realm", but think about the the nature of the Minish for a moment. They are animal-like humanoid beings from another dimension. They arrived in Hyrule bearing a sacred relic, the Light Force, and used that power to defeat evil (by giving the Light Force and the Picori Blade to the princess and hero) in the War of the Bound Chest. "Who" exactly "sent" the Minish is totally unknown, but it shouldn't be lost on you that the Minish appeared in Hyrule's hour of need and saved the day with the aid of sacred relics.
 
-3. Refounding
+**3. Refounding**
 
 This part of the history is why I chose to stick to Refounding over attempting to mix True Founding in as well. I won't get into an argument for Refounding as that is its own line of argumentation, and it's also impossible to solve without additional developer clarification anyway.
 
-I think in a True Founding scenario, there's enough changes to the narrative that this entire line of thinking both just wouldn't work (The Zonai would predate the Twili) and also leaves the Sheikah Eye question unresolved still. The Wild Era Sheikah clearly derived their Sheikah Eye from the Zonai despite the true symbol coming from a much earlier era, leaving the dynamic of the Zonai having a third eye and being the future Sheikah's inspiration to be a coincidence.
+I think in a True Founding scenario, there's enough changes to the narrative that this entire line of thinking both just wouldn't work (The Zonai would predate the Twili) and also leaves the Sheikah Eye question unresolved still. The Wild Era Sheikah clearly derived their Sheikah Eye from the Zonai despite the true symbol coming from a much earlier era, leaving the dynamic of the Zonai having a third eye and being the future Sheikah's inspiration to be more of a coincidence.
 
-In a refounding scenario, the Zonai appeared out of nowhere in Hyrule because they did not exist in Hyrule until that point; they were returning from their rehabilitation in the Twilight Realm.
+In a refounding scenario, the Zonai appeared out of nowhere in Hyrule because they did not exist in Hyrule until that point. Like the Minish/Picori, they came from another dimension; for the Zonai, they were returning from their rehabilitation in the Twilight Realm.
 
-4. Additional points
+**4. Additional points**
 
 In Twilight Princess, the Mirror of Twilight is broken by Midna which is clearly meant to signify a permanent severence of the Twilight Realm and the World of Light. **How could the Twili leave the Twilight Realm if the only key to the realm has been destroyed?**
 
