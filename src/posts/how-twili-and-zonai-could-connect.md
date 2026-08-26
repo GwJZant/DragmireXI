@@ -4,7 +4,7 @@ subtitle: 'A thought experiment supposing what a Twili-Zonai connection would en
 date: '2026-08-26'
 ---
 
-This theory explores the following thought experiment: If the Zonai and Twili were directly related, HOW would they be related?
+**This theory explores the following thought experiment: If the Zonai and Twili were directly related, HOW would they be related?**
 
 I will try not to fluff up what I am talking about in this post. I will be assuming the following two things:
 
@@ -59,7 +59,7 @@ With these points, I believe it is reasonable to conclude that, regardless of ho
 
 ## The Twili's Rehabilitation
 
-This point addresses the following question: Why would a banished faction of evil sorcerers become divine servants of the gods?
+**This point addresses the following question: Why would a banished faction of evil sorcerers become divine servants of the gods?**
 
 Let's look at a few perspectives.
 
@@ -99,7 +99,7 @@ In this section, I want to talk about the conditions around when the Zonai would
 
 1. Physical and spiritual evolution of the Twili
 
-There is an obvious question to ask when comparing the Twili and Zonai. The Twili are blue-skinned humanoids without much animal-like visuals (with the exception of Zant who looks somewhat like a snake, almost Voldemort-like). The Zonai, on the other hand, look like human-animal hybrids. How exactly are the Twili supposed to become the Zonai?
+There is an obvious question to ask when comparing the Twili and Zonai. The Twili are blue-skinned humanoids without much animal-like visuals (with the exception of Zant who looks somewhat like a snake, almost Voldemort-like). The Zonai, on the other hand, look like human-animal hybrids. **How exactly are the Twili supposed to become the Zonai?**
 
 Let's think about the concept of Draconification for a moment. This is a process where a person ingests a Sacred Stone (a relic of the gods) and transforms into a dragon. 
 
@@ -115,7 +115,7 @@ If you think of the Zonai as being a physical form that reflects the "shape" of 
 
 One of the most curious things about the Zonai in terms of figuring out where to fit them in relation to the Sheikah, is how the Zonai literally have the Sheikah Eye as part of their body. It is not a tattoo; they have a literal third eye and a teardrop in their fur/skin.
 
-Keeping in mind the Twili are former Sheikah and how they have been purified by the Light of the gods, ask yourself: What physical form would befit that of a true Sheikah?
+Keeping in mind the Twili are former Sheikah and how they have been purified by the Light of the gods, ask yourself: **What physical form would befit that of a true Sheikah?**
 
 My answer would be: The Zonai.
 
@@ -157,10 +157,10 @@ In a refounding scenario, the Zonai appeared out of nowhere in Hyrule because th
 
 4. Additional points
 
-In Twilight Princess, the Mirror of Twilight is broken by Midna which is clearly meant to signify a permanent severence of the Twilight Realm and the World of Light. How could the Twili leave the Twilight Realm if the only key to the realm has been destroyed?
+In Twilight Princess, the Mirror of Twilight is broken by Midna which is clearly meant to signify a permanent severence of the Twilight Realm and the World of Light. **How could the Twili leave the Twilight Realm if the only key to the realm has been destroyed?**
 
 The answer to this may feel like a cop out but it's pretty simple: The gods (Hylia, the Light Spirits, etc) released them. Remember that the entire reason the Twili are in the Twilight Realm is because they were placed there by the Light Spirits. Whether or not the mirror was used to do that is unknown (in the sense that it's unknown if the Mirror of Twilight is a relic given to Hylians by the gods to access the Twilight Realm if needed, or if the Mirror of Twilight was literally used by the Light Spirits as the way they banished the Interlopers), but the fact of the matter is it was the power of the gods that put them there and the power of the gods should be able to release them.
 
-Aside from the issue of the Mirror of Twilight, wouldn't the Twili leaving the Twilight Realm break the intent of Twilight Princess's message, particularly the finale?
+**Aside from the issue of the Mirror of Twilight, wouldn't the Twili leaving the Twilight Realm break the intent of Twilight Princess's message, particularly the finale?**
 
-This obviously depends on the player. This theory does not suggest Midna herself ever left the Twilight Realm. The proposition here is that the Twili as a collective tribe are slowly being purified by sacred Light, a process that could take untold eons. Their eventual release does not diminish their punishment just as a karmic sentence in Naraka does not diminish the impact of the negative karma. In fact, this sentence should be seen as merciful as corrupted servants of the gods would be worthy of remediation. It is consistent with series lore than the actions of a person don't define that person forever. Whether it's through a spiritual rebirth like Byrne in Spirit Tracks, or a Force-driven transformation like Batreaux, the future of an individual is always open.
+This obviously depends on the player. This theory does not suggest Midna herself ever left the Twilight Realm. The proposition here is that the Twili as a collective tribe are slowly being purified by sacred Light, a process that could take untold eons. Their eventual release does not diminish their punishment just as a karmic sentence in Naraka does not diminish the impact of the negative karma. In fact, this sentence should be seen as merciful as corrupted servants of the gods would be worthy of remediation. It is consistent with series lore that the actions of a person don't define that person forever. Whether it's through a spiritual rebirth like Byrne in Spirit Tracks, or a Force-driven transformation like Batreaux, the future of an individual is always open.
