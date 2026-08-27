@@ -88,11 +88,11 @@ Think about the Twilight Realm as a plane of Naraka. The Interlopers aligned the
 
 While unconfirmed, something that strikes similarities to the Twilight Realm that has an explicit association with Hylia is the Silent Realm from Skyward Sword. This was a realm you inhabit with your spirit rather than your physical body. There are a few things about the Silent Realm that evoke thoughts of the Twilight Realm:
 
-1. Association with spirits
+a. Association with spirits
 
 When in the Twilight Realm (and without some kind of artifact to let you keep your body), you lose your body and become a spirit. With the Silent Realm, it is accessed by Link with his spirit. There is a teal glow to the body to indicate they are in a spiritual form and you can see it both on random people in Twilight Princess and on Link in Skyward Sword while in a Silent Realm.
 
-2. Tears of Light
+b. Tears of Light
 
 In Twilight Princess, Tears of Light are portions of the Light energy associated with a Light Spirit. When this Light is taken, it allows the Twilight to overpower it. When the Tears of Light are together, the Light Spirit's power is restored and the influence of Light becomes dominant.
 
@@ -100,11 +100,11 @@ It plays a similar role in Skyward Sword where they must be collected by Link an
 
 In both cases, the Tears of Light are associated with a peace free from darkness.
 
-3. Dusk Relics
+c. Dusk Relics
 
 In Skyward Sword, Amber Relics can be found in many places and are magatama shapes. In the Silent Realms, Dusk Relics are found instead. These are purple and obviously associated with "Dusk" which is just another way to say "Twilight".
 
-4. The "Hostile" Silent Realm
+d. The "Hostile" Silent Realm
 
 When Link touches the water in the Silent Realm, it activates the guardians who chase Link. When this happens, the entire color scheme of the realm changes from that blue/teal color to yellow/orange and the sky itself also changes to this color. It is in this phase when it most resembles the Twilight Realm which also had a similar color scheme with its sky.
 
