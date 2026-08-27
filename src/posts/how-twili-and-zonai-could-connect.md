@@ -98,7 +98,7 @@ In Twilight Princess, Tears of Light are portions of the Light energy associated
 
 It plays a similar role in Skyward Sword where they must be collected by Link and, when assembled, the Tears of Light suppress the guardians in the Silent Realm and allow Link to walk freely and obtain the treasure hidden by Hylia.
 
-In both cases, the Tears of Light are associated with a peace free from darkness.
+In both cases, the Tears of Light are associated with a peace free from darkness. For Link, it symbolizes enlightenment and the trials are honing his very spirit and dispelling any impurities/darkness from his heart. In the Twilight Realm,  this process sort of happens to the Light Spirit and and that restoration dispels the Twilight from the land and returns the dominance of Light.
 
 **c. Dusk Relics**
 
