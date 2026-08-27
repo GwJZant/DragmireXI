@@ -140,23 +140,29 @@ Now think to the Twili. They are bathed in the light of the Sols in the Palace o
 
 In fact, we already know the Twili have undergone physical changes by the Twilight Realm because we know originally they were humans before being banished. Their time in the Twilight Realm transformed them into the modern day Twili. This transformation from the Twili to the Zonai would simply be one more step in the progression of the Twili.
 
-If you think of the Zonai as being a physical form that reflects the "shape" of ones spirit, the connection to the Sheikah becomes even more clear, in my opinion.
+If you think of the Zonai as being a physical form that reflects the "shape" of one's spirit, the connection to the Sheikah becomes even more clear, in my opinion.
 
 One of the most curious things about the Zonai in terms of figuring out where to fit them in relation to the Sheikah, is how the Zonai literally have the Sheikah Eye as part of their body. It is not a tattoo; they have a literal third eye and a teardrop in their fur/skin.
 
-Keeping in mind the Twili are former Sheikah and how they have been purified by the Light of the gods, ask yourself: **What physical form would befit that of a true Sheikah?**
+Keeping in mind the Twili are former Sheikah and how they have been purified by the Light of the gods, ask yourself: **What physical form would befit that of a true Sheikah, agent of Hylia?**
 
 My answer would be: The Zonai.
 
-The Sheikah Eye of the Wild Era is designed after the Zonai's third eye, yet the Sheikah symbol of the far past predates this inspiration. This "rediscovery" of the Sheikah Eye makes a bit more sense if the source of this rediscovery is essentially just another form of the Sheikah.
+Allow me to present a piece of evidence for why the form of the Zonai reflects the spirit of a servant of Hylia/the gods:
 
-In terms of the progression of the Sheikah Eye, what is important here is the Sheikah Eye originally would have been a sacred symbol of the followers of Hylia; Her servants would bear this mark. The Sheikah of Ocarina of Time's era bear the same symbol because they are servants of Hylia's bloodline; their purpose remains very similar. 
+![](SS_Earth_Guardian_Model.png "One of the guardians of the Silent Realm, a domain of Hylia")
 
-That Sheikah tribe fractured and a portion of them became the Interlopers then the Twili. When these Twili were purified, their physical forms came to bear the symbol of Hylia's followers. At the conclusion of the Zonai's presence in Hyrule (the end of the Imprisoning War) and the start of Hylian dominance, the Hylians of that era adopted the symbol back from the Zonai as an homage to Rauru and Mineru.
+An intriguing thing about Skyward Sword in hindsight of Tears of the Kingdom is the striking similarity between this particular guardian and the Zonai. Both wear similar clothes, have the same stature and silhouette including "ears", and are specifically associated with Hylia in a way that even the Sheikah aren't as they only exist in a spiritual realm. Compare the above guardian with Rauru and the Zonai statues found in the Temple of Light:
 
-Original: Skyward Sword (Hylia-sourced)
-2nd Gen: Ocarina of Time (SS Zelda-sourced)
-3rd Gen: Age of Imprisonment (Zonai-sourced)
+![](TotK_Rauru_Model.png) ![](TotK_Statue_Zonai_Model.png)
+
+Many times when it comes to comparing visuals in the Zelda series, you kind of need to stretch a little to make connections. Sometimes it's swirls, eye designs, ear comparisons, etc. In the case of the guardians and the Zonai, there is not much of a stretch to be made at all. These are the same designs.
+
+Either the Zonai were around prior to Skyward Sword, or the Zonai itself is derived either from those statues or from Hylia herself (because the guardians inhabit Hylia's Silent Realms). Which of these you adopt will depend on how you view the timeline, but focus on what is important here: The guardians are servants of Hylia.
+
+Just as the Sheikah are Hylia's agents in the World of Light, the guardians are her agents in the Silent Realms, a spiritual realm.
+
+Ask yourself one more time: **What physical form would befit that of a true Sheikah, agent of Hylia?**
 
 **2. The Intervention of the Gods**
 
