@@ -35,6 +35,10 @@ export const TIMELINE_GAME_PRESETS: GamePreset[] = [
 	{ id: 'hw', label: 'Hyrule Warriors', short: 'HW', color: '#c62828' },
 	{ id: 'aoc', label: 'Hyrule Warriors: Age of Calamity', short: 'AoC', color: '#b71c1c' },
 	{ id: 'aoi', label: 'Hyrule Warriors: Age of Imprisonment', short: 'AoI', color: '#004d40' },
+	{ id: 'coh', label: 'Cadence of Hyrule', short: 'CoH', color: '#dbed91' },
+	{ id: 'lct', label: 'Link\'s Crossbow Training', short: 'LCT', color: '#a6e3dd' },
+	{ id: 'ast', label: 'Ancient Stone Tablets', short: 'AST', color: '#ccc6b6' },
+	{ id: 'bsloz', label: 'BS Legend of Zelda', short: 'BSLoZ', color: '#d7ebd3' },
 ];
 
 export function getPresetById(id: string): GamePreset | undefined {
